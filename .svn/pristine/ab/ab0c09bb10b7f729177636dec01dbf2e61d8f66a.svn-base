@@ -1,0 +1,42 @@
+package algorithms.structures;
+
+import controller.AlgorithmController;
+import graph.Node;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Created by dgj470 on 02/03/16.
+ */
+
+public class PriorityQueue extends GenericCollection {
+
+    Node goal;
+
+    public PriorityQueue(AlgorithmController a) {
+        super(new LinkedList<>(), a);
+        this.goal = goal;
+    }
+
+    @Override
+    public HeuristicHolder pop() {
+        sort();
+        return collection.poll();
+    }
+
+    private void sort() {
+        Collections.sort((List<HeuristicHolder>)collection, (c1, c2) -> distance(c1.getConnection().getDest()) - distance(c2.getConnection().getDest()));
+    }
+
+    @Override
+    public void push(HeuristicHolder item) {
+        collection.add(item);
+    }
+
+    private int distance(Node a) {
+        return (int) Math.sqrt(Math.pow(a.getX() - goal.getX(), 2) + Math.pow(a.getY() - goal.getY(), 2))*100;
+    }
+
+}

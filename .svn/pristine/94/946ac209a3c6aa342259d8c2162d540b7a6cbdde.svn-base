@@ -1,0 +1,17 @@
+package algorithms.implementedAlgorithms;
+
+import algorithms.structures.MyStack;
+import controller.AlgorithmController;
+
+/**
+ * Created by dgj470
+ */
+public class DepthFirst extends GenericSearch {
+    /**
+
+     */
+    public DepthFirst(AlgorithmController a) {
+        super(new MyStack(a), a);
+    }
+
+}

@@ -1,0 +1,79 @@
+package algorithms.structures;
+
+import controller.AlgorithmController;
+import graph.Connection;
+import graph.Node;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+
+/**
+ * Created by dgj470 on 07/03/16.
+ */
+
+public class APriorityQueue extends GenericCollection {
+
+    LinkedHashMap<Node, Double> cost = new LinkedHashMap<>();
+    AlgorithmController a;
+
+    public APriorityQueue(AlgorithmController a) {
+        super(new LinkedList<>(), a);
+        System.out.println(a.getTo());
+        this.a = a;
+    }
+
+    @Override
+    public HeuristicHolder pop() {
+        sort();
+        return collection.poll();
+    }
+
+    private void sort() {
+        Collections.sort(collection, (c1, c2) -> (int) (c1.getCostHeuristic() - c2.getCostHeuristic()));
+    }
+
+    private double get(Node node) {
+        if (cost.containsKey(node)) {
+            return cost.get(node);
+        }
+        return -1; //not found
+    }
+
+    @Override
+    public void push(HeuristicHolder parent) {
+
+        if (!cost.containsKey(parent.getConnection().getInit())) {
+            cost.put(parent.getConnection().getInit(), 0.);
+        }
+
+        double distance = distance(parent.getConnection());
+
+        cost.put(parent.getConnection().getDest(), distance);
+        parent.setCost(distance);
+
+
+        parent.setHeuristic(heuristic(parent.getConnection().getDest()));
+
+        collection.add(parent);
+    }
+
+    protected double heuristic(Node current) {
+        return Math.sqrt(Math.pow(current.getX() - a.getTo().getX(), 2) + Math.pow(current.getY() - a.getTo().getY(), 2)) * 100;
+    }
+
+    protected double distance(Connection c) {
+        if (get(c.getDest()) > c.getWeight() + get(c.getInit()) || get(c.getDest()) == -1) {
+            return (c.getWeight() + get(c.getInit()));
+        } else {
+            return get(c.getDest());
+        }
+
+    }
+
+    @Override
+    public LinkedList<HeuristicHolder> getList() {
+        sort();
+        return super.getList();
+    }
+}

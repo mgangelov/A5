@@ -1,0 +1,32 @@
+<project default="main">
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="jar"/>
+    </target>
+    
+    <target name="compile">
+
+        <mkdir dir="bin"/>
+
+        <javac sourcepath="" destdir="bin" srcdir="src">
+            <include name="**/*.java"/>
+            <exclude name="testing/*"/>
+        </javac>
+    </target>
+
+    <target name="build">
+        <mkdir dir="jar"/>
+
+        <jar destfile="jar/GraphSearchVisualiser.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="ui.application.GUI"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="jar/GraphSearchVisualiser.jar" fork="true"/>
+    </target>
+
+    <target name="main" depends="clean,compile,build,run"/>
+</project>

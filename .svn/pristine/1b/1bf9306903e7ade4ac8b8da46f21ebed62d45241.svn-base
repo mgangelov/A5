@@ -1,0 +1,17 @@
+package algorithms.implementedAlgorithms;
+
+import algorithms.structures.MyQueue;
+import controller.AlgorithmController;
+
+/**
+ * Created by dgj470
+ */
+public class BreadthFirst extends GenericSearch {
+    /**
+
+     */
+    public BreadthFirst(AlgorithmController a) {
+        super(new MyQueue(a),a);
+    }
+
+}

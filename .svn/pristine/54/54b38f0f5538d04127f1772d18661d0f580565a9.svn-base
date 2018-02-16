@@ -1,0 +1,15 @@
+package algorithms.implementedAlgorithms;
+
+import algorithms.structures.APriorityQueue;
+import controller.AlgorithmController;
+
+/**
+ * Created by dgj470 on 07/03/16.
+ */
+public class AStarSearch extends GenericSearch {
+    /**
+     */
+    public AStarSearch(AlgorithmController a) {
+        super(new APriorityQueue(a),a);
+    }
+}

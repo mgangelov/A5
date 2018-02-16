@@ -1,0 +1,216 @@
+package graph;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+/**
+ * A class which evenly generates coordinates for a list of nodes or a set
+ * number of nodes.
+ * 
+ * @author martin
+ *
+ */
+public class CoordGenerator {
+	// private int numberOfNodes;
+	// public int counter;
+	// private int dLimit;
+	public static Random rand = new Random();
+	private static int value = 0;
+	private static Quadrant Q1 = new Quadrant(0, 90);
+	private static Quadrant Q2 = new Quadrant(90, 180);
+	private static Quadrant Q3 = new Quadrant(180, 270);
+	private static Quadrant Q4 = new Quadrant(270, 360);
+	private int dLimit;
+
+	public CoordGenerator() {
+
+	}
+	
+	
+	public List<Node> genBySquare(int numberOfNodes, int range) {
+		List<Node> nodes = new ArrayList<Node>();
+		Random rand = new Random();
+		int[][] square = new int[range+1][range+1];
+		for (int i = 0; i < range+1; i++)
+			for (int j = 0; j < range+1; j++) {
+				square[i][j] = 0;
+			}
+		int counter = 0;
+		while (counter < numberOfNodes) {
+			int x = rand.nextInt(range)+1;
+			int y = rand.nextInt(range)+1;
+			if (square[x][y] == 0) {
+				Node n = new Node(counter, x, y);
+				nodes.add(n);
+				counter++;
+				square[x][y] = 1;
+			}
+		}
+		System.out.println(nodes);
+		
+		return nodes;
+	}
+
+	/**
+	 * Generates coordinates for a number of nodes.
+	 * @param numberOfNodes The number of nodes.
+	 * @param dLimit The limit of the random distance between nodes
+	 * @param sLimit The size of the square canvas where the nodes are generated.
+	 * @return A list of nodes with randomized coords.
+	 */
+	public List<Node> generate(int numberOfNodes, int dLimit, int sLimit) {
+		setdLimit(dLimit);
+		List<Node> nodes = new ArrayList<Node>();
+		int dist = rand.nextInt(dLimit);
+		int initCoord = sLimit / 2; // initial x and y of first point
+		Node<Integer> init = new Node<Integer>(value, initCoord, initCoord);
+		nodes.add(init); // insert the first node.
+		value++;
+		int numberOfQuadrants = rand.nextInt(4);
+		System.out.println("Random: " + numberOfQuadrants);
+		switch (numberOfQuadrants) {
+		case 0:
+			genCoordByQuadrant(Q1, numberOfNodes - 1, init, nodes);
+			break;
+		case 1: {
+			genCoordByQuadrant(Q1, (numberOfNodes - 1) / 2, init, nodes);
+			genCoordByQuadrant(Q2, (numberOfNodes - 1) / 2, init, nodes);
+			break;
+		}
+		case 2: {
+			genCoordByQuadrant(Q1, (numberOfNodes - 1) / 3, init, nodes);
+			genCoordByQuadrant(Q2, (numberOfNodes - 1) / 3, init, nodes);
+			genCoordByQuadrant(Q3, (numberOfNodes - 1) / 3, init, nodes);
+			break;
+		}
+		case 3: {
+			genCoordByQuadrant(Q1, (numberOfNodes - 1) / 4, init, nodes);
+			genCoordByQuadrant(Q2, (numberOfNodes - 1) / 4, init, nodes);
+			genCoordByQuadrant(Q3, (numberOfNodes - 1) / 4, init, nodes);
+			genCoordByQuadrant(Q3, (numberOfNodes - 1) / 4, init, nodes);
+			break;
+		}
+		}
+		/*
+		 * for (Node n : nodes) { multiply(50, n); }
+		 */
+		return nodes;
+	}
+
+	public void genCoordByQuadrant(Quadrant q, int counter, Node parent, List<Node> nodes) {
+		double angle = randAngle(q.getrMin(), q.getrMax());
+		// angle = Math.toRadians(angle);
+		System.out.println("Angle: " + angle);
+		int dist = rand.nextInt(getdLimit()) + 1;
+		System.out.println("Distance: " + dist);
+		double newX = 0;
+		double newY = 0;
+		/// if (q.equals(Q1) || q.equals(Q2)) {
+		newX = parent.getX() + dist * (Math.sin(Math.toRadians(angle)));
+		newY = parent.getY() + dist * (Math.cos(Math.toRadians(angle)));
+		// }
+		/*
+		 * else { newX = parent.getX() +
+		 * dist*(Math.sin(Math.toRadians(angle-180))); newY = parent.getY() +
+		 * dist*(Math.cos(Math.toRadians(angle-180))); }
+		 */
+		System.out.println("New X: " + newX);
+		System.out.println("New Y: " + newY);
+		Node<Integer> n = new Node<Integer>(value, newX, newY);
+		value++;
+		counter--;
+		nodes.add(n);
+		if (counter != 0) {
+			genCoordByQuadrant(q, counter, n, nodes);
+		}
+	}
+
+	public static double randAngle(int min, int max) {
+		double angle = rand.nextInt(360);
+		while (angle < min && angle > max) {
+			angle = rand.nextInt(360);
+		}
+		// double result = Math.sin(Math.toRadians(angle));
+		return angle;
+	}
+
+	/**
+	 * Helper method
+	 * 
+	 * @param value
+	 * @param n
+	 * @return
+	 */
+	public Node<Integer> multiply(int value, Node n) {
+		return new Node<Integer>((int) n.getValue(), n.getX() * 10, n.getY() * 10);
+	}
+
+	public static void main(String[] args) {
+		CoordGenerator g = new CoordGenerator();
+		List<Node> test = g.generate(10, 5, 20);
+		//System.out.println("Size: " + test.size());
+		DTriangulation t = new DTriangulation();
+		//List<Connection> con = t.triangulate(test);
+		/*for (int j = 0; j < test.size() - 3; j++) {
+			System.out.println("A: " + test.get(j).getX() + " " + test.get(j).getY());
+			System.out.println("B: " + test.get(j+1).getX() + " " + test.get(j+1).getY());
+			System.out.println("C: " + test.get(j+2).getX() + " " + test.get(j+2).getY());
+			System.out.println("Center: " + t.getTriangleCircumcenter(test.get(j), test.get(j+1), test.get(j+2)).getX()
+					+ " " + t.getTriangleCircumcenter(test.get(j), test.get(j+1), test.get(j+2)).getY());
+		}*/
+		//Node a = new Node(2,1.0,1.0);
+		//Node b = new Node(2,5.0,1.0);
+		//Node c = new Node(2,3.0,3.0);
+		//System.out.println("Center" + t.getTriangleCircumcenter1(a, b, c).getX() + " " + t.getTriangleCircumcenter1(a, b, c).getY());
+		//System.out.println(t.inside(new Node(2, 3.0, 3.0), a , b, c));
+		//Graph graph = new Graph(test, con);
+		//System.out.println(graph);
+	}
+
+	/**
+	 * @return the dLimit
+	 */
+	public int getdLimit() {
+		return dLimit;
+	}
+
+	/**
+	 * @param dLimit2
+	 *            the dLimit to set
+	 */
+	public void setdLimit(int dLimit2) {
+		this.dLimit = dLimit2;
+	}
+}
+
+class Quadrant {
+	private int rMin;
+	private int rMax;
+
+	public Quadrant(int rMin, int rMax) {
+		this.setrMin(rMin);
+		this.setrMax(rMax);
+	}
+
+	public int getrMin() {
+		return rMin;
+	}
+
+	public void setrMin(int rMin) {
+		this.rMin = rMin;
+	}
+
+	public int getrMax() {
+		return rMax;
+	}
+
+	public void setrMax(int rMax) {
+		this.rMax = rMax;
+	}
+
+	public boolean equals(Quadrant q) {
+		return rMin == q.getrMin() && rMax == q.getrMax();
+
+	}
+}

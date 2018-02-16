@@ -1,0 +1,439 @@
+package ui.application;
+
+import algorithms.implementedAlgorithms.*;
+import controller.AlgorithmController;
+import graph.ExampleGraphs;
+import graph.Graph;
+import graph.GraphGenerator;
+import graph.GraphStorage;
+import graph.Node;
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import static java.lang.System.exit;
+
+public class GUI extends Application {
+
+	private Pane visualiser;
+	private Canvas canvas;
+	private Stage dialog;
+
+	@Override
+	/**
+	 * Starting the GUI.
+	 */
+	public void start(Stage primaryStage) {
+		primaryStage.setTitle("Graph Search Visualiser");
+		primaryStage.setOnCloseRequest(e -> exit(0));
+		ExampleGraphs exGraph = new ExampleGraphs();
+		Graph graph = exGraph.planarGraph15();
+		BorderPane pane = new BorderPane();
+
+		visualiser = new Pane();
+		visualiser.setStyle("-fx-background-color: #ffffff");
+
+		canvas = new Canvas(1000, 700);
+		visualiser.getChildren().add(canvas);
+
+		AlgorithmController a = new AlgorithmController();
+		Visualiser v = new Visualiser(a, canvas, visualiser);
+		v.getController().setGraph(graph);
+
+		VBox optionsPanel = configureOptions(v);
+		pane.setLeft(optionsPanel);
+
+
+		pane.setCenter(visualiser);
+		Scene scene = new Scene(pane, 1280, 800);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+
+		legend(primaryStage);
+
+		refresh(v);
+
+	}
+
+	/**
+	 * Display a legend
+	 *
+	 * @param primaryStage The primary stage to display the legend with
+	 */
+	public void legend(Stage primaryStage) {
+
+		dialog = new Stage();
+		dialog.setTitle("Legend");
+		dialog.initModality(Modality.NONE);
+		dialog.setX(primaryStage.getX() + 1280);
+		dialog.setY(primaryStage.getY());
+		dialog.initOwner(primaryStage);
+		
+		Pane algoNames = new Pane();
+		BorderPane pane = new BorderPane();
+		Pane vis = new Pane();
+		Canvas legend = new Canvas(100, 400);
+		GraphicsContext gc = legend.getGraphicsContext2D();
+		vis.getChildren().add(legend);
+		pane.setLeft(vis);
+		gc.setLineWidth(5);
+		//Green Node
+		gc.setFill(Color.GREEN);
+		gc.fillOval(10, 30, 30, 30);
+		Text green = new Text(0, 50, " Explored Node");
+		//Red Node
+		gc.setFill(Color.RED);
+		gc.fillOval(10, 70, 30, 30);
+		Text red = new Text(0, 88, " Unexplored Node");
+		//Aqua Node
+		gc.setFill(Color.AQUA);
+		gc.fillOval(10, 110, 30, 30);
+		Text aqua = new Text(0, 130, " Path Node");
+		//Blue Line
+		gc.setStroke(Color.DODGERBLUE);
+		gc.strokeLine(10, 160, 40, 160);
+		Text blue = new Text(0, 165, " Unexplored Line");
+
+
+		Text bfs = new Text(0, 215, "Breadth First Search");
+		gc.setStroke(Color.YELLOW);
+		gc.strokeLine(10, 210, 40, 210);
+		Text dfs = new Text(0, 235, "Depth First Search");
+		gc.setStroke(Color.ORANGE);
+		gc.strokeLine(10, 230, 40, 230);
+		Text greedyBest = new Text(0, 255, "Greedy Best First Search");
+		gc.setStroke(Color.BLACK);
+		gc.strokeLine(10, 250, 40, 250);
+		Text dijkstra = new Text(0, 275, "Dijkstras Algorithm");
+        gc.setStroke(Color.PINK);
+        gc.strokeLine(10, 270, 40, 270);
+        Text astar = new Text(0, 295, "A* Search");
+        gc.setStroke(Color.DARKGREEN);
+        gc.strokeLine(10, 290, 40, 290);
+        
+		//Purple Line
+        Text path = new Text(0, 335, "Final Path");
+		gc.setStroke(Color.PURPLE);
+		gc.strokeLine(10, 330, 40, 330);
+
+		algoNames.getChildren().addAll(green, red, aqua, blue, bfs, dfs, greedyBest, dijkstra, astar, path);
+		pane.setCenter(algoNames);
+		Scene dialogScene = new Scene(pane, 300, 400);
+		dialog.setScene(dialogScene);
+	}
+
+
+	/**
+	 * The list of buttons,sliders,etc. for the GUI.
+	 *
+	 * @param v
+	 */
+	public VBox configureOptions(Visualiser v) {
+		Pane root = new Pane();
+		VBox options = new VBox();
+		options.setPadding(new Insets(50, 50, 50, 50));
+		options.setSpacing(20);
+
+		Graph graph = v.getController().getGraph();
+
+		//Sets up checkboxes for selecting algorithms
+		final CheckBox bfs = new CheckBox("Breadth First Search");
+		final CheckBox dfs = new CheckBox("Depth First Search");
+		final CheckBox greedyBFS = new CheckBox("Greedy Best First Search");
+		final CheckBox dijkstra = new CheckBox("Dijkstra Search");
+		final CheckBox astar = new CheckBox("A Star Search");
+
+		//Sets layout
+		bfs.setLayoutX(25);
+		bfs.setLayoutY(-25);
+		dfs.setLayoutX(25);
+		dfs.setLayoutY(0);
+		greedyBFS.setLayoutX(25);
+		greedyBFS.setLayoutY(25);
+		dijkstra.setLayoutX(25);
+		dijkstra.setLayoutY(50);
+		astar.setLayoutX(25);
+		astar.setLayoutY(75);
+
+		Spinner<Integer> fromNode = new Spinner<>(0, graph.getNodes().size() - 1, 0);
+		Spinner<Integer> toNode = new Spinner<>(0, graph.getNodes().size() - 1, 2);
+		Label fromNodeL = new Label("From Node:");
+		Label toNodeL = new Label("To Node:");
+		fromNodeL.setLayoutX(25);
+		fromNodeL.setLayoutY(100);
+		toNodeL.setLayoutX(25);
+		toNodeL.setLayoutY(145);
+		fromNode.setLayoutX(75);
+		fromNode.setLayoutY(120);
+		fromNode.setEditable(true);
+		toNode.setLayoutX(75);
+		toNode.setLayoutY(165);
+		toNode.setEditable(true);
+
+		final Slider speed = new Slider();
+		speed.setMin(-0.5);
+		speed.setMax(0.5);
+		speed.setValue(0.2);
+		speed.setLayoutX(25);
+		speed.setLayoutY(260);
+		speed.setShowTickMarks(true);
+		speed.setMajorTickUnit(0.5);
+		v.setSpeed(speed.getValue());
+
+		final Button play = new Button("Play");
+		final Button pause = new Button("Pause");
+		final Button refresh = new Button("Refresh");
+		play.setLayoutX(25);
+		play.setLayoutY(195);
+		pause.setLayoutX(75);
+		pause.setLayoutY(195);
+		pause.setDisable(true);
+		refresh.setLayoutX(145);
+		refresh.setLayoutY(195);
+
+		refresh.setOnAction(e -> {
+			refresh(v);
+			pause.setDisable(true);
+			play.setDisable(false);
+		});
+
+		speed.valueProperty().addListener((observable, oldValue, newValue) -> {
+			v.setSpeed((Double) newValue);
+		});
+
+		play.setOnAction(e -> {
+			play.setDisable(true);
+			refresh(v);
+			pause.setDisable(false);
+			refresh.setDisable(true);
+
+			Graph g = v.getController().getGraph();
+
+			Node fNode = (Node) g.getNodes().get(getValue(fromNode));
+			Node tNode = (Node) g.getNodes().get(getValue(toNode));
+
+
+			if (fNode == tNode) {
+				System.out.println("Start node and goal node are the same");
+				return;
+			}
+
+			AlgorithmController a = v.getController();
+			a.clearAlgorithms();
+
+			//Adds selected algorithms to the algorithm controller
+			if (bfs.isSelected()) {
+				a.addAlgo(new BreadthFirst(a));
+			}
+			if (dfs.isSelected()) {
+				a.addAlgo(new DepthFirst(a));
+			}
+			if (greedyBFS.isSelected()) {
+				a.addAlgo(new GreedyBFS(a));
+			}
+			if (dijkstra.isSelected()) {
+				a.addAlgo(new DijkstraSearch(a));
+			}
+			if (astar.isSelected()) {
+				a.addAlgo(new AStarSearch(a));
+			}
+
+
+			if (a.getAlgoCount() == 0) {
+				System.out.println("No algorithm selected");
+			} else {
+
+				a.setGraph(g);
+				a.setTo(tNode);
+				a.setFrom(fNode);
+				a.runAlgorithms();
+				System.out.println("running");
+				play(v);
+			}
+
+				play.setDisable(false);
+				refresh.setDisable(false);
+
+		});
+
+		pause.setOnAction(p -> {
+			pause.setDisable(false);
+			play.setDisable(true);
+			final Button resume = new Button("Resume");
+			resume.setLayoutX(75);
+			resume.setLayoutY(195);
+			root.getChildren().add(resume);
+			v.setPause(true);
+			resume.setOnAction(r -> {
+				pause.setVisible(true);
+				resume.setVisible(false);
+				v.setPause(false);
+			});
+		});
+
+		final Label speedLabel = new Label("Playback Speed");
+		speedLabel.setLayoutX(25);
+		speedLabel.setLayoutY(235);
+
+		ToggleButton legend = new ToggleButton("Legend");
+		legend.setLayoutX(25);
+		legend.setLayoutY(290);
+		legend.setOnAction(e -> {
+			if (!dialog.isShowing()) {
+				dialog.show();
+			} else {
+				dialog.close();
+			}
+
+		});
+
+		Label graphGenTitle = new Label("Graph Generation");
+		Spinner<Integer> noOfNodes = new Spinner<>(0, 20, 10);
+		Label noOfNodesL = new Label("Number of nodes:");
+		Spinner<Integer> connectivity = new Spinner<>(0, 100, 50);
+		Label connectivityL = new Label("Connectivity:");
+		Spinner<Integer> directedness = new Spinner<>(0, 100, 50);
+		Label directednessL = new Label("Directedness:");
+		CheckBox weighted = new CheckBox("Weighted");
+		CheckBox planar = new CheckBox("Planar");
+		CheckBox directednessCheck = new CheckBox("Directed");
+
+		graphGenTitle.setLayoutX(25);
+		graphGenTitle.setLayoutY(340);
+		graphGenTitle.setFont(Font.font("Times New Roman", FontWeight.BOLD, 20));
+		noOfNodesL.setLayoutX(25);
+		noOfNodesL.setLayoutY(375);
+		noOfNodes.setLayoutX(75);
+		noOfNodes.setLayoutY(400);
+		connectivityL.setLayoutX(25);
+		connectivityL.setLayoutY(430);
+		connectivity.setLayoutX(75);
+		connectivity.setLayoutY(455);
+		directednessL.setLayoutX(25);
+		directednessL.setLayoutY(485);
+		directedness.setLayoutX(75);
+		directedness.setLayoutY(515);
+		directednessCheck.setLayoutX(25);
+		directednessCheck.setLayoutY(570);
+		directedness.setDisable(true);
+		directednessCheck.setSelected(false);
+		directednessCheck.setOnMouseClicked(e -> {
+			if(directednessCheck.isSelected()) {
+				directedness.setDisable(false);
+			} else {
+				directedness.setDisable(true);
+			}
+		});
+		weighted.setLayoutX(25);
+		weighted.setLayoutY(590);
+		planar.setLayoutX(25);
+		planar.setLayoutY(610);
+
+		Button generate = new Button("Generate");
+		Button _import = new Button("Import");
+		Button export = new Button("Export");
+		FileChooser fileChooserI = new FileChooser();
+		fileChooserI.setTitle("Import graph");
+		FileChooser fileChooserE = new FileChooser();
+		fileChooserE.setTitle("Export graph");
+		fileChooserI.getExtensionFilters().add(new FileChooser.ExtensionFilter("Graph files", "*.csv"));
+		fileChooserE.getExtensionFilters().add(new FileChooser.ExtensionFilter("Graph files", "*.csv"));
+		fileChooserI.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*"));
+
+		generate.setLayoutX(25);
+		generate.setLayoutY(640);
+		generate.setMinWidth(220);
+		_import.setLayoutX(25);
+		_import.setLayoutY(670);
+		_import.setMinWidth(110);
+		export.setLayoutX(135);
+		export.setLayoutY(670);
+		export.setMinWidth(110);
+
+		generate.setOnAction(e -> {
+			GraphGenerator generator = new GraphGenerator();
+			Graph graph1 = generator.genSquared(noOfNodes.getValue(), connectivity.getValue(), weighted.isSelected(), directednessCheck.isSelected());
+			if (planar.isSelected()) {
+				graph1 = generator.genPlanar(noOfNodes.getValue(), connectivity.getValue(), weighted.isSelected(), directednessCheck.isSelected());
+			}
+			v.getController().clearAlgorithms();
+			System.out.println(graph1.getNumberOfNodes());
+			v.getController().setGraph(graph1);
+			refresh(v);
+		});
+		
+		_import.setOnAction(e -> {
+			try {
+				v.getController().setGraph(GraphStorage.importGraph(fileChooserI.showOpenDialog(dialog).getAbsolutePath()));
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			refresh(v);
+		});
+		
+		export.setOnAction(e -> {
+			try {
+				GraphStorage.exportIntegerGraph(v.getController().getGraph(), fileChooserE.showSaveDialog(dialog).getAbsolutePath());
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			refresh(v);
+		});
+
+		root.getChildren().addAll(bfs, dfs, greedyBFS, dijkstra, astar, fromNodeL, toNodeL, fromNode, toNode);
+		root.getChildren().addAll(play, pause, refresh, speedLabel, speed, legend, graphGenTitle);
+		root.getChildren().addAll(noOfNodesL, noOfNodes, connectivityL, connectivity, directednessCheck, directednessL, directedness, weighted, planar);
+		root.getChildren().addAll(generate, _import, export);
+		options.getChildren().add(root);
+		return options;
+	}
+
+	private void refresh(Visualiser v) {
+		visualiser.getChildren().clear();
+		v.drawShapes();
+		v.drawEdges(v.getConnections());
+		visualiser.getChildren().add(canvas);
+	}
+
+
+	private int getValue(Spinner<Integer> spinner) {
+		// Get the spinner editor value
+		String value = spinner.getEditor().getCharacters().toString();
+
+		//parse it
+		try {
+			spinner.getValueFactory().setValue(Integer.parseInt(value));
+		} catch (Exception ee) {
+			spinner.getValueFactory().setValue(spinner.getValue());
+		}
+
+		return spinner.getValue();
+
+	}
+
+	private void play(Visualiser v) {
+		Thread r = new Thread(v);
+		r.start();
+	}
+
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+}

@@ -1,0 +1,17 @@
+package algorithms.implementedAlgorithms;
+
+import algorithms.structures.DijkstraQueue;
+import controller.AlgorithmController;
+
+/**
+ * Created by dgj470 on 07/03/16.
+ */
+public class DijkstraSearch extends GenericSearch {
+    /**
+
+     */
+    public DijkstraSearch(AlgorithmController a) {
+        super(new DijkstraQueue(a),a);
+    }
+
+}

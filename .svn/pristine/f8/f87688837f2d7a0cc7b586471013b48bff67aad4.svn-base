@@ -1,0 +1,132 @@
+package algorithms.implementedAlgorithms;
+
+import algorithms.structures.GenericCollection;
+import algorithms.structures.HeuristicHolder;
+import algorithms.structures.MyStack;
+import controller.AlgorithmController;
+import graph.Connection;
+import graph.Node;
+
+import java.util.*;
+
+/**
+ * Created by dgj470
+ */
+public abstract class GenericSearch<A> extends algorithms.AbstractAlgorithm {
+
+
+    protected GenericCollection frontier;
+    private LinkedHashMap<Node<A>, Node<A>> parentTraceMap = new LinkedHashMap<>();
+    private int stepCount = 0;
+
+
+    /**
+     */
+    public GenericSearch(GenericCollection frontier, AlgorithmController a) {
+        super(a);
+        this.frontier = frontier;
+
+    }
+
+    /**
+     * Run the algorithm, and put the result in data and path.
+     */
+    public void runAlgo() {
+        super.runAlgo();
+        Set<Node<A>> visited = new HashSet<>();
+
+        frontier.clear(); // make sure the frontier doesn't contain any stale nodes
+
+        frontier.push(new HeuristicHolder(new Connection(0, new Node(-9999), from), -1, -1));
+        while (!frontier.isEmpty()) {
+
+
+            LinkedList<HeuristicHolder> frontiercopy = new LinkedList<>();
+
+            frontier.getList().stream().forEach(frontiercopy::add);
+
+            Connection con = frontier.pop().getConnection();
+
+            for (int i = stepCount; i <= stepCount + con.getWeight(); i++) {
+                collectionMap.put(i, frontiercopy);
+            }
+
+            stepCount += con.getWeight();
+
+
+            // visit check
+            if (!visited.contains(con.getDest())) {
+                visited.add(con.getDest());
+
+                data.add(con);
+
+                // goal check
+                if (visited.contains(to)) {
+                    path = tracePath(to, parentTraceMap);
+                    return;
+                }
+
+
+                // add children
+                ArrayList<Connection> children = new ArrayList<>();
+                g.getConnections().stream().forEach(c -> {
+                    if (((Connection) c).getInit() == con.getDest()) {
+                        children.add((Connection) c);
+                    }
+                });
+                for (Connection child : children) {
+                    if (!visited.contains(child.getDest())) {
+                        frontier.push(new HeuristicHolder(child, -1, -1));
+                        if (parentTraceMap != null) {
+                            if (!(parentTraceMap.containsKey(child.getDest()) && !(frontier instanceof MyStack))) { //really hacky but soz
+                                parentTraceMap.put(child.getDest(), con.getDest());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /**
+     * @param node The end node
+     * @param path The map of child->parent gathered from the search
+     * @return The path
+     */
+    private List<Node<A>> tracePath(Node<A> node, Map<Node<A>, Node<A>> path) {
+        ArrayList<Node<A>> keys = new ArrayList<>(path.keySet());
+        for (Node<A> key : keys) {
+            //System.out.println(key.getValue() + " : " + path.get(key));
+        }
+
+
+        List<Node<A>> completePath = new ArrayList<Node<A>>();
+        completePath.add(node);
+
+        while (path.containsKey(node)) {
+            node = path.get(node);
+            completePath.add(node);
+        }
+
+        reverse(completePath);
+        return completePath;
+    }
+
+    /**
+     * Reverses the given list
+     *
+     * @param list A list to reverse
+     */
+    private void reverse(List<Node<A>> list) {
+        for (int i = 0; i < list.size() / 2; i++) {
+            Node<A> temp = list.get(i);
+            int j = list.size() - i - 1;
+
+            list.set(i, list.get(j));
+            list.set(j, temp);
+        }
+    }
+
+
+}

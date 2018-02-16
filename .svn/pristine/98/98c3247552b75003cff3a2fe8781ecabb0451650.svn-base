@@ -1,0 +1,43 @@
+package testing;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import graph.Connection;
+import graph.Graph;
+import graph.GraphGenerator;
+import graph.Node;
+import graph.Pair;
+
+public class GraphTest {
+	public static void printGraph(Graph g) {
+		List<Connection> l = g.getConnections();
+		List<Node> nodes = g.getNodes();
+		List<Pair> temp = new ArrayList<Pair>();
+		for (Connection c : l) {
+			if (!temp.contains(new Pair(c.getDest(),c.getInit()))) {
+				temp.add(new Pair(c.getInit(),c.getDest()));
+			}
+		}
+		for (Pair p : temp) {
+			System.out.println("From " + p.getFst().toString() + " To " + p.getSnd().toString());
+		}
+		System.out.println("Number of connections: " + l.size());
+		System.out.println("Coords before: ");
+		for (Node n : nodes) {
+			System.out.println("X: " + n.getX() + " Y: " + n.getY());
+		}
+		//GraphGenerator.calculateCoords(g)
+	}
+	
+	public static void main(String[] args) {
+		Graph one = GraphGenerator.genSimple(10, 0.3, false);
+		printGraph(one);
+		/*while(true) {
+			double test = Math.random();
+			test = Math.round(test * 10);
+			test = test/10;
+			System.out.println(test);
+		}*/
+	}
+}

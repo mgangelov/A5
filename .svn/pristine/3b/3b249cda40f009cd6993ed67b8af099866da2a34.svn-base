@@ -1,0 +1,108 @@
+package ui.application;
+import javafx.scene.shape.Line;
+import javafx.scene.Node;
+import javafx.scene.Group;
+import javafx.scene.shape.Polygon;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.transform.Transform;
+import java.lang.Math;
+ 
+public class ArrowHeadLine {
+	double startX;
+	double startY;
+	double endX;
+	double endY;
+	Group group;
+	Paint fill;
+	double width;
+	Paint stroke;
+	Polygon arrowhead;
+	Line segment;
+ 
+	public ArrowHeadLine(double startX,double startY,double endX,double endY){
+		this.startX=startX;
+		this.startY=startY;
+		this.endX=endX;
+		this.endY=endY;
+		arrowhead = new Polygon();
+		arrowhead.getPoints().addAll(new Double[]{
+    			-6.0,-6.0,
+                0.0,0.0,
+              -6.0,6.0 });
+		handleChange();
+	}
+	
+	public void setStroke(Color c){
+		this.stroke=c;
+	}
+	
+	public void setFill(Color c){
+		this.fill=c;
+	}
+	
+	public void setLineWidth(double w){
+		this.width=w;
+	}
+	
+    protected Node create(){
+    	group = new Group();
+    	Line line = new Line(startX, startY, endX, endY);
+    	line.setStroke(stroke);
+    	line.setStrokeWidth(width);
+    	arrowhead.setFill(fill);
+    	group.getChildren().addAll(line,arrowhead);
+    	return group;
+    }
+ 
+    public void handleChange(){
+        double angle = Math.toDegrees(Math.atan2(endY-startY, endX-startX));
+        //arrowhead.setTranslateX((startX-endY)/2);
+        //arrowhead.setTranslateY((startY-endY)/2);
+        if(startY>endY)
+        {
+            arrowhead.setTranslateY(endY+(startY-endY)/2);
+        }
+        if(startY<endY)
+        {
+            arrowhead.setTranslateY(startY+(endY-startY)/2);
+        }
+        if(startX>endX)
+        {
+        	arrowhead.setTranslateX(endX+(startX-endX)/2);
+        }
+        if(startX<endX)
+        {
+        	arrowhead.setTranslateX(startX+(endX-startX)/2);
+        }
+        if(startY==endY)
+        {
+        	if(startX>endX)
+        	{
+        		arrowhead.setTranslateX(endX+((startX-endX)/2));
+        		arrowhead.setTranslateY(endY);
+        	}
+        	else
+        	{
+        		arrowhead.setTranslateX(startX+((endX-startX)/2));
+        		arrowhead.setTranslateY(endY);
+        	}
+        }
+        if(startX==endX)
+        {
+        	if(startY>endY)
+        	{
+        		arrowhead.setTranslateX(endX);
+        		arrowhead.setTranslateY(endY+((startY-endY)/2));
+        	}
+        	if(startY<endY)
+        	{
+        		arrowhead.setTranslateX(endX);
+        		arrowhead.setTranslateY(startY+((endY-startY)/2));
+        	}
+        }
+        arrowhead.translateXProperty();
+        arrowhead.getTransforms().add(Transform.rotate(angle, 0, 0));
+    }
+ 
+}

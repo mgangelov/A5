@@ -1,0 +1,17 @@
+package algorithms.implementedAlgorithms;
+
+import algorithms.structures.GreedyQueue;
+import controller.AlgorithmController;
+
+/**
+ * Created by dgj470 on 02/03/16.
+ */
+public class GreedyBFS extends GenericSearch {
+    /**
+
+     */
+    public GreedyBFS(AlgorithmController a) {
+        super(new GreedyQueue(a),a);
+    }
+
+}

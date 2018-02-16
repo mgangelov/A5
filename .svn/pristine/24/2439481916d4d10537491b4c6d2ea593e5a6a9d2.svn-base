@@ -1,0 +1,281 @@
+package graph;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+/**
+ * A graph generator which generates random graph based on given properties.
+ * example properties: Number of Nodes, Connectedness(probability),
+ * Planar(bool), Weightedness(bool), loops possible(bool), acyclic(bool)
+ * 
+ * @author martin
+ *
+ */
+public class GraphGenerator {
+
+	/**
+	 * A method which generates a planar graph using a Delaunay triangulation.
+	 * 
+	 * @param numberOfNodes
+	 *            The number of nodes.
+	 * @param dLimit
+	 *            The limit of the random distance between nodes.
+	 * @param sLimit
+	 *            The size of the square canvas where the nodes are generated.
+	 * @return
+	 */
+	public static Graph genPlanar(int numberOfNodes, int connectivity, boolean weighted,
+			boolean directed) {
+		DTriangulation dt = new DTriangulation();
+		CoordGenerator g = new CoordGenerator();
+		List<Node> nodes = g.genBySquare(numberOfNodes, 10);
+		List<Connection> connections = dt.triangulate(nodes, weighted);
+		List<Connection> temp = new ArrayList<Connection>();
+		double connectivityCoef = (double) connectivity / 100;
+		System.out.println("Connectivity coef: " + connectivityCoef);
+		int targetNumberOfConnections = (int) (connections.size() * connectivityCoef);
+		System.out.println("number of cons: " + targetNumberOfConnections + " actual: " + connections.size());
+		while (connections.size() != targetNumberOfConnections) {
+			Random rand = new Random();
+			connections.remove(rand.nextInt(connections.size()));
+		}
+		if (!directed) {
+			for (Connection c : connections) {
+				Connection rev = new Connection(c.getWeight(), c.getDest(), c.getInit());
+				temp.add(rev);
+			}
+			connections.addAll(temp);
+		}
+		
+		return new Graph(nodes, connections);
+	}
+
+	/**
+	 * Decides whether to draw an edge between two nodes, given a probability.
+	 * 
+	 * @param prob
+	 *            A probability of two nodes to have an edge between them.
+	 * @return True in prob times of the cases and false in (1-prob) times of
+	 *         the cases.
+	 */
+	public static boolean drawEdge(double prob) {
+		Random random = new Random();
+		double r = random.nextDouble();
+		// r = Math.round(r * 10);
+		// r = r/10;
+		// System.out.println("Random number: " + r);
+		return r < prob;
+	}
+
+	public static Graph generate() {
+		Graph g = genSimple(8, 0.4, false);
+		return g;
+	}
+
+	/**
+	 * Generates a simple random graph based on a connectivity probability. It
+	 * has the option of returning a weighted or non-weighed graph.
+	 * 
+	 * @param numberOfNodes
+	 *            The number of nodes the graph should contain.
+	 * @param connectivity
+	 *            The probability with which two nodes from the graph would be
+	 *            connected.
+	 * @param weighted
+	 *            Should the generated graph be weighted or not.
+	 * @return A random Graph object with n Nodes and random amount of
+	 *         connections.
+	 */
+	public static Graph genSimple(int numberOfNodes, double connectivity, boolean weighted) {
+		connectivity = connectivity / 100;
+		Random random = new Random();
+		List<Node<Integer>> nodes = new ArrayList<Node<Integer>>();
+		List<Connection> connections = new ArrayList<Connection>();
+		int maxConnections = (numberOfNodes * (numberOfNodes - 1)) / 2;
+		int permittedConnections = (int) (maxConnections * connectivity);
+		System.out.println("Permitted: " + permittedConnections);
+		for (int i = 0; i < numberOfNodes; i++) {
+			Node<Integer> node = new Node(i);
+			nodes.add(node);
+		}
+		for (int i = 0; i < nodes.size(); i++)
+			for (int j = i + 1; j < nodes.size(); j++) {
+				if (drawEdge(connectivity) && (connections.size() < permittedConnections)) {
+					if (weighted) {
+						connections.add(new Connection(random.nextInt(100) + 1, nodes.get(i), nodes.get(j)));
+					} else
+						connections.add(new Connection(100, nodes.get(i), nodes.get(j)));
+				}
+			}
+		Graph g = new Graph<Integer>(nodes, connections);
+		calculateCoords(g);
+		List<Connection> temp = new ArrayList<Connection>();
+		for (Connection c : connections) {
+			Connection rev = new Connection(c.getWeight(), c.getDest(), c.getInit());
+			temp.add(rev);
+		}
+		g.getConnections().addAll(temp);
+		return g;
+	}
+
+	/**
+	 * Function which generates appropriate coordinates to the vertices of an
+	 * inputted graph.
+	 * 
+	 * @param g
+	 *            A Graph object.
+	 */
+	public static void calculateCoords(Graph g) {
+		List<Node> nodes = g.getNodes();
+		List<Connection> connections = g.getConnections();
+
+		for (Node a : nodes) {
+			for (Node b : nodes) {
+				if (a.getValue() != b.getValue()) {
+					// calculate squared distance between a and b.
+					double sqDist = ((a.getX() - b.getX()) * (a.getX() - b.getX())
+							+ ((a.getY() - b.getY()) * (a.getY() - b.getY())));
+					a.setxNetForce(a.getxNetForce() + (100 * ((a.getX() - b.getX()) / sqDist)));
+					a.setyNetForce(a.getyNetForce() + (100 * ((a.getY() - b.getY()) / sqDist)));
+				}
+			}
+			for (Connection c : connections) {
+				if (c.getInit().getValue() == a.getValue()) {
+					a.setxNetForce(a.getxNetForce() + 0.36 * (c.getDest().getX() - a.getX()));
+					a.setyNetForce(a.getyNetForce() + 0.36 * (c.getDest().getY() - a.getY()));
+				}
+			}
+			a.setxVelocity((a.getxVelocity() + a.getxNetForce()) * 0.80);
+			a.setyVelocity((a.getyVelocity() + a.getyNetForce()) * 0.80);
+		}
+
+		for (Node a : nodes) {
+			a.setX((a.getX() + a.getxVelocity()) / 30);
+			a.setY((a.getY() + a.getyVelocity()) / 30);
+			System.out.println("X: " + a.getX() + " Y: " + a.getY());
+		}
+	}
+
+	
+	public static Graph genSquared(int numberOfNodes,  int connectivity, boolean weighted, boolean directed) {
+		Random rand = new Random();
+		CoordGenerator cGen = new CoordGenerator();
+		List<Node> nodes = cGen.genBySquare(numberOfNodes, 10);
+		/*int[][] square = new int[range][range];
+		for (int i = 0; i < 10; i++)
+			for (int j = 0; j < 10; j++) {
+				square[i][j] = 0;
+			}
+		int counter = 0;
+		while (counter < numberOfNodes) {
+			int x = rand.nextInt(10);
+			int y = rand.nextInt(10);
+			if (square[x][y] == 0) {
+				Node n = new Node(counter, x, y);
+				nodes.add(n);
+				counter++;
+				square[x][y] = 1;
+			}
+		}
+		System.out.println(nodes);*/
+
+		int maxConnections = (numberOfNodes * (numberOfNodes - 1)) / 2;
+		double connectivityCoef = (double) connectivity / 100;
+		int permConnections = (int) (connectivityCoef * maxConnections);
+		List<Connection> connections = new ArrayList<Connection>();
+
+		System.out.println("Permitted: " + permConnections);
+
+		while (connections.size() < permConnections) {
+			Connection con = null;
+			int init = rand.nextInt(nodes.size());
+			int dest = rand.nextInt(nodes.size());
+
+			if (!weighted) {
+				con = new Connection(100, nodes.get(init), nodes.get(dest));
+			} else {
+				con = new Connection(rand.nextInt(100) + 1, nodes.get(init), nodes.get(dest));
+			}
+
+			connections.add(con);
+		}
+
+		System.out.println("Numbers of cons: " + connections.size());
+
+		if (!directed) {
+			List<Connection> tempCon = new ArrayList<Connection>();
+			for (int i = 0; i < connections.size(); i++) {
+				Connection con = connections.get(i);
+				Connection temp = new Connection(con.getWeight(), con.getDest(), con.getInit());
+				tempCon.add(temp);
+			}
+			connections.addAll(tempCon);
+		}
+		
+		return new Graph(nodes, connections);
+	}
+
+	public static Graph genSimplest(int numberOfNodes, int range, int connectivity, boolean weighted,
+			boolean directed) {
+		// range = range - 10;
+		ArrayList<Integer> xVisited = new ArrayList<Integer>();
+		ArrayList<Integer> yVisited = new ArrayList<Integer>();
+		Random rand = new Random();
+		List<Node> nodes = new ArrayList<Node>();
+		for (int i = 0; i < numberOfNodes; i++) {
+			int x = rand.nextInt(range) + 1;
+			int y = rand.nextInt(range) + 1;
+			while (xVisited.contains(x))
+				x += 1;
+			while (yVisited.contains(y))
+				x += 1;
+			Node node = new Node(i, x, y);
+			System.out.println(node);
+			nodes.add(node);
+		}
+		List<Connection> connections = new ArrayList<Connection>();
+		int maxConnections = (numberOfNodes * (numberOfNodes - 1)) / 2;
+		System.out.println("Max conn: " + maxConnections);
+		double connectivityCoef = (double) connectivity / 100;
+		System.out.println("Coef: " + connectivityCoef);
+		int permConnections = (int) (connectivityCoef * maxConnections);
+		System.out.println("Permitted: " + permConnections);
+		while (connections.size() < permConnections) {
+			Connection con = null;
+			int init = rand.nextInt(nodes.size());
+			int dest = rand.nextInt(nodes.size());
+
+			if (!weighted) {
+				con = new Connection(100, nodes.get(init), nodes.get(dest));
+			} else {
+				con = new Connection(rand.nextInt(100) + 1, nodes.get(init), nodes.get(dest));
+			}
+
+			connections.add(con);
+
+			/*
+			 * Connection con = null; for (int i = 0; i < nodes.size(); i++) {
+			 * boolean drawFlagX = rand.nextBoolean(); for (int j = 0; j <
+			 * nodes.size(); j++) { boolean drawFlagY = rand.nextBoolean(); if
+			 * (drawFlagX && drawFlagY) { if (weighted) con = new
+			 * Connection(rand.nextInt(100) + 1, nodes.get(i), nodes.get(j));
+			 * else con = new Connection(100, nodes.get(i), nodes.get(j));
+			 * connections.add(con); } } }
+			 */
+		}
+
+		System.out.println("Numbers of cons: " + connections.size());
+
+		if (!directed) {
+			List<Connection> tempCon = new ArrayList<Connection>();
+			for (int i = 0; i < connections.size(); i++) {
+				Connection con = connections.get(i);
+				Connection temp = new Connection(con.getWeight(), con.getDest(), con.getInit());
+				tempCon.add(temp);
+			}
+			connections.addAll(tempCon);
+		}
+		return new Graph(nodes, connections);
+	}
+}

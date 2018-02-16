@@ -1,0 +1,236 @@
+package ui.application;
+
+import controller.AlgorithmController;
+import controller.structures.AlgorithmStatusData;
+import controller.structures.ExploredStatusData;
+import controller.structures.StatusData;
+import graph.Connection;
+import graph.Graph;
+import graph.Node;
+import javafx.application.Platform;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by dan
+ */
+public class Visualiser extends Thread {
+    private Canvas canvas;
+    private double speed = 0.4;
+    private boolean paused = false;
+    private Pane pane;
+    public int completed = 0;
+    private AlgorithmController a;
+
+    public Visualiser(AlgorithmController a, Canvas canvas, Pane pane) {
+        this.canvas = canvas;
+        this.pane = pane;
+        this.a = a;
+    }
+
+    public void run() {
+        a.set(0);
+        completed = 0;
+        while (a.getPos() < a.getPlayBackLength()) {
+            if (!paused)
+                a.step(speed);
+
+            StatusData s = a.getState();
+            
+            
+            Platform.runLater(() -> drawData(s)); //Runs the update
+            try {
+                TimeUnit.MILLISECONDS.sleep(1);
+            } catch (InterruptedException e1) {
+                // TODO Auto-generated catch block
+                //e1.printStackTrace();
+                System.out.println("'Tis me ############################");
+            }
+        }
+        System.out.println("Done");
+        completed = 1;
+        try {
+            TimeUnit.MILLISECONDS.sleep(100);
+        } catch (InterruptedException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+            System.out.println("Hiya");
+        }
+
+        drawPath(a.getState().getAlgorithmInfo(0).getPath());
+    }
+
+    private void drawPath(List<Node> path) {
+
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.setStroke(Color.PURPLE);
+        
+        int shortest = 20;
+        
+        for(int j = 0;j< a.getAlgoCount();j++)
+        {
+        	int nodes = 0;
+        	for (int i = 0; i < a.getState().getAlgorithmInfo(j).getData().size(); i++) 
+        	{
+        		Connection con = a.getState().getAlgorithmInfo(j).getData().get(i).getConnection();
+        		nodes++;
+        	}
+        	if(nodes<shortest)
+        	{
+        		shortest = j;
+        	}
+        }
+        
+        for (int i = 0; i < a.getState().getAlgorithmInfo(shortest).getData().size(); i++) {
+            Connection con = a.getState().getAlgorithmInfo(shortest).getData().get(i).getConnection();
+            Node init = con.getInit();
+            Node dest = con.getDest();
+            if (path.contains(init) && path.contains(dest)) {
+                gc.strokeLine(init.getX() * 50, init.getY() * 50, dest.getX() * 50, dest.getY() * 50);
+            }
+        }
+
+        int i = 1;
+        for (Node pnode : path) {
+            gc.setFill(Color.AQUA);
+            gc.fillOval(pnode.getX() * 50 - 15, pnode.getY() * 50 - 15, 30, 30);
+            gc.setFill(Color.BLACK);
+            gc.fillText(i + "", pnode.getX() * 50 - 5, pnode.getY() * 50 + 5);
+            i++;
+
+        }
+    }
+
+    public void drawData(StatusData data) {
+        Graph<Integer> graph = data.getGraph();
+
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+       // gc.clearRect(0, 0, 1000, 700);
+        //drawShapes();
+        Connection c;
+        double xdiff;
+        double ydiff;
+
+        gc.setLineWidth(3);
+
+        gc.setStroke(Color.YELLOW);
+        gc.setFill(Color.GREEN);
+        
+        ArrayList<Paint> colours = new ArrayList<>();
+        colours.add(Color.YELLOW); //breath first
+        colours.add(Color.ORANGE); //depth first
+        colours.add(Color.BLACK); // greedy best first
+        colours.add(Color.PINK); // Dijkstras
+        colours.add(Color.DARKGREEN); //A*
+
+        //pane.getChildren().clear();
+        //drawEdges(graph.getConnections());
+        Node from = a.getFrom();
+        gc.fillOval((from.getX()) * 50 - 15, (from.getY()) * 50 - 15, 30, 30);
+        int counter = 0;
+        for (int i = 0; i < data.getStatusData().size(); i++) { //for every algorithm
+
+            AlgorithmStatusData asd = data.getStatusData().get(i);
+
+            gc.setStroke(colours.get(asd.getAlgoType()));
+
+
+            for (ExploredStatusData esd : asd.getData()) { //for every line in the current algorithm
+                c = esd.getConnection();
+                
+                xdiff = c.getDest().getX() - c.getInit().getX();
+                ydiff = c.getDest().getY() - c.getInit().getY();
+
+                double angle = Math.atan(xdiff / ydiff);
+
+                double xShift = counter * Math.sin(angle + Math.PI / 2) * 4;
+                double yShift = counter * Math.cos(angle + Math.PI / 2) * 4;
+
+                double lineStartX = c.getInit().getX();
+                double lineStartY = c.getInit().getY();
+                double lineEndX = lineStartX + (esd.getProgress() / c.getWeight() * xdiff);
+                double lineEndY = lineStartY + (esd.getProgress() / c.getWeight() * ydiff);
+
+
+                gc.strokeLine(lineStartX * 50 + xShift, lineStartY * 50 + yShift, lineEndX * 50 + xShift, lineEndY * 50 + yShift);
+
+                if (esd.getProgress() / c.getWeight() == 1) {
+                    gc.fillOval((c.getDest().getX()) * 50 - 15, (c.getDest().getY()) * 50 - 15, 30, 30);
+                }
+
+            }
+            counter++;
+        }
+        //pane.getChildren().add(canvas);
+    }
+
+    /**
+     * Draw the nodes and the edges between them.
+     *
+     */
+    public void drawShapes() {
+        Graph g = a.getGraph();
+
+        List<Connection> connections = g.getConnections();
+        List<Node> nodes = g.getNodes();
+
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.clearRect(0, 0, 1280, 700);
+        drawEdges(connections);
+        int i = 0;
+        for (Node<Integer> node : nodes) {
+            gc.setFill(Color.RED);
+            gc.fillOval(((node.getX() * 50) - 15), ((node.getY() * 50) - 15), 30, 30);
+            gc.setFill(Color.WHITE);
+            gc.fillText(i + "", node.getX() * 50 - 5, node.getY() * 50 + 5);
+            i++;
+        }
+
+    }
+
+    public void drawEdges(List<Connection> connections) {
+        for (Connection con : connections) {
+            Node<Integer> init = con.getInit();
+            Node<Integer> dest = con.getDest();
+            ArrowHeadLine arrowhead = new ArrowHeadLine(init.getX() * 50, init.getY() * 50, dest.getX() * 50, dest.getY() * 50);
+            arrowhead.setStroke(Color.DODGERBLUE);
+            arrowhead.setFill(Color.DODGERBLUE);
+            arrowhead.setLineWidth(3);
+            javafx.scene.Node line = arrowhead.create();
+            pane.getChildren().add(line);
+        }
+    }
+
+
+    public void setPause(boolean b) {
+        this.paused = b;
+    }
+
+    public AlgorithmController getController(){
+        return a;
+    }
+
+    public void setSpeed(double s){
+        this.speed = s;
+    }
+    
+    public List<Connection> getConnections(){
+    	return a.getGraph().getConnections();
+    }
+    public boolean isCompleted(){
+    	if(completed == 1){
+    		return true;
+    	}
+    	return false;
+    }
+}

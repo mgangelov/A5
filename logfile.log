@@ -1,0 +1,3610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+<logentry
+   revision="219">
+<author>dgj470</author>
+<date>2016-03-21T10:18:00.922906Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Small changes for presentations</msg>
+</logentry>
+<logentry
+   revision="218">
+<author>dgj470</author>
+<date>2016-03-21T09:05:50.977821Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed the massive bug displaying frontiers</msg>
+</logentry>
+<logentry
+   revision="217">
+<author>dgj470</author>
+<date>2016-03-21T08:00:25.593335Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/testing/GraphTest.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Commented out a line in Graph gen testing as it doesn't compile</msg>
+</logentry>
+<logentry
+   revision="216">
+<author>nxb484</author>
+<date>2016-03-20T22:34:57.835963Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Changed heuristic and cost line text colour from grey to white. Implemented black border for this text. This improves readability.</msg>
+</logentry>
+<logentry
+   revision="215">
+<author>nxb484</author>
+<date>2016-03-20T18:18:02.199753Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Wording and spelling on error messages.</msg>
+</logentry>
+<logentry
+   revision="214">
+<author>nxb484</author>
+<date>2016-03-20T16:42:57.506535Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Added a rough form of rounding to the drawn heuristic.</msg>
+</logentry>
+<logentry
+   revision="213">
+<author>nxb484</author>
+<date>2016-03-20T16:42:12.081215Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added text explaining the significance of the size of arrowheads.</msg>
+</logentry>
+<logentry
+   revision="212">
+<author>mrt469</author>
+<date>2016-03-20T15:24:18.710028Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Removed TODOs</msg>
+</logentry>
+<logentry
+   revision="211">
+<author>mrt469</author>
+<date>2016-03-20T15:23:36.831705Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added tooltip descriptions</msg>
+</logentry>
+<logentry
+   revision="210">
+<author>mrt469</author>
+<date>2016-03-20T15:16:27.491080Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added Tooltips messages</msg>
+</logentry>
+<logentry
+   revision="209">
+<author>nxb484</author>
+<date>2016-03-19T23:11:11.541782Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Node tooltips added.</msg>
+</logentry>
+<logentry
+   revision="208">
+<author>mxa487</author>
+<date>2016-03-19T22:49:59.704884Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/testing/GraphUnitTest.java</path>
+</paths>
+<msg>Made the unit test class work with the final generation algorithm.</msg>
+</logentry>
+<logentry
+   revision="207">
+<author>mxa487</author>
+<date>2016-03-19T22:32:51.281412Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/CoordGenerator.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/DTriangulation.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Performed a major cleanup of the graph generation classes and also javadoc-ed them.</msg>
+</logentry>
+<logentry
+   revision="206">
+<author>mxa487</author>
+<date>2016-03-19T18:53:47.200929Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/DTriangulation.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Node.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>The directedness coefficient now works in graph generation.</msg>
+</logentry>
+<logentry
+   revision="205">
+<author>dgj470</author>
+<date>2016-03-19T16:39:07.444919Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Spinners are now updated instead of replaced on graph gen (aka it works)</msg>
+</logentry>
+<logentry
+   revision="204">
+<author>dgj470</author>
+<date>2016-03-19T16:09:09.293021Z</date>
+<paths>
+<path
+   kind="file"
+   copyfrom-path="/src/ui/application/ArrowHeadLine.java"
+   copyfrom-rev="203"
+   action="A">/src/ui/application/ArrowHead.java</path>
+<path
+   kind="file"
+   action="D">/src/ui/application/ArrowHeadLine.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>ArrowHead scaling</msg>
+</logentry>
+<logentry
+   revision="203">
+<author>nxb484</author>
+<date>2016-03-19T15:45:32.570644Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added the first batch of tooltips (Algorithms). Deleted TODO tag.</msg>
+</logentry>
+<logentry
+   revision="202">
+<author>dgj470</author>
+<date>2016-03-19T15:40:31.757357Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/.classpath</path>
+<path
+   action="D"
+   kind="file">/.project</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+</paths>
+<msg>Fixed pathfinding bug</msg>
+</logentry>
+<logentry
+   revision="201">
+<author>nxb484</author>
+<date>2016-03-19T15:39:20.871612Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Added Javadoc and Author tag</msg>
+</logentry>
+<logentry
+   revision="200">
+<author>mrt469</author>
+<date>2016-03-19T00:23:33.564829Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Added comments</msg>
+</logentry>
+<logentry
+   revision="199">
+<author>mrt469</author>
+<date>2016-03-19T00:21:36.856870Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Added comments
+</msg>
+</logentry>
+<logentry
+   revision="198">
+<author>mrt469</author>
+<date>2016-03-19T00:19:30.153041Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added comments and author tags</msg>
+</logentry>
+<logentry
+   revision="197">
+<author>mrt469</author>
+<date>2016-03-19T00:14:37.895817Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/.classpath</path>
+<path
+   kind="file"
+   action="A">/.project</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added author tags</msg>
+</logentry>
+<logentry
+   revision="196">
+<author>mrt469</author>
+<date>2016-03-19T00:11:08.173706Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added comments</msg>
+</logentry>
+<logentry
+   revision="195">
+<author>mrt469</author>
+<date>2016-03-19T00:10:18.641630Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added comments</msg>
+</logentry>
+<logentry
+   revision="194">
+<author>mxp424</author>
+<date>2016-03-18T17:04:22.014125Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made the window not resizable.</msg>
+</logentry>
+<logentry
+   revision="193">
+<author>mxp424</author>
+<date>2016-03-18T16:53:11.695951Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed a minor bug and added error boxes.</msg>
+</logentry>
+<logentry
+   revision="192">
+<author>mxp424</author>
+<date>2016-03-18T16:28:05.523185Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed a bug with the generation of graphs.</msg>
+</logentry>
+<logentry
+   revision="191">
+<author>dgj470</author>
+<date>2016-03-18T16:21:20.679517Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Fixed colour bug</msg>
+</logentry>
+<logentry
+   revision="190">
+<author>mrt469</author>
+<date>2016-03-18T15:03:37.402772Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Repositioned algorithm dialog button</msg>
+</logentry>
+<logentry
+   revision="189">
+<author>nxb484</author>
+<date>2016-03-17T21:36:22.827420Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added tooltip skeletons (Still need to be filled with information, but they're listed as TODO). Added some comments.</msg>
+</logentry>
+<logentry
+   revision="188">
+<author>dgj470</author>
+<date>2016-03-17T19:28:51.589176Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Final javadoccing :D</msg>
+</logentry>
+<logentry
+   revision="187">
+<author>nxb484</author>
+<date>2016-03-17T18:57:46.880844Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/GraphStorage.java</path>
+</paths>
+<msg>Combined superfluous append statements in the export methods.</msg>
+</logentry>
+<logentry
+   revision="186">
+<author>dgj470</author>
+<date>2016-03-17T18:57:17.802999Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/HeuristicHolder.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/MyStack.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/StatusData.java</path>
+</paths>
+<msg>More javadoc :D</msg>
+</logentry>
+<logentry
+   revision="185">
+<author>dgj470</author>
+<date>2016-03-17T18:50:30.009353Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyStack.java</path>
+</paths>
+<msg>Fixed depth first after accidentally replacing it with breadth first</msg>
+</logentry>
+<logentry
+   revision="184">
+<author>dgj470</author>
+<date>2016-03-17T18:45:27.541112Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/HeuristicHolder.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/MyQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyStack.java</path>
+<path
+   kind="file"
+   action="D">/src/algorithms/structures/PriorityQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Javadoccing</msg>
+</logentry>
+<logentry
+   revision="183">
+<author>dgj470</author>
+<date>2016-03-17T16:20:16.289391Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Fixed a small spacing error</msg>
+</logentry>
+<logentry
+   revision="182">
+<author>dgj470</author>
+<date>2016-03-17T15:40:59.298220Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/MyStack.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/PriorityQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/StatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Connection.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/CoordGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/DTriangulation.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Graph.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphStorage.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Node.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Pair.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/GraphTest.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/GraphUnitTest.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/ArrowHeadLine.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Reformatted entire project</msg>
+</logentry>
+<logentry
+   revision="181">
+<author>dgj470</author>
+<date>2016-03-17T14:21:20.499707Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Small refactor</msg>
+</logentry>
+<logentry
+   revision="180">
+<author>dgj470</author>
+<date>2016-03-17T14:11:03.184887Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Can now view heuristics and cost yay! </msg>
+</logentry>
+<logentry
+   revision="179">
+<author>dgj470</author>
+<date>2016-03-17T13:41:09.666049Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>You can now choose frontiers</msg>
+</logentry>
+<logentry
+   revision="178">
+<author>dgj470</author>
+<date>2016-03-17T13:15:30.226117Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Corrected framerate</msg>
+</logentry>
+<logentry
+   revision="177">
+<author>dgj470</author>
+<date>2016-03-17T13:04:26.443887Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Added proper displaying of stack/queue</msg>
+</logentry>
+<logentry
+   revision="176">
+<author>mrt469</author>
+<date>2016-03-17T12:44:35.425444Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added dialog box for selecting frontier, heuristic and cost of algorithms</msg>
+</logentry>
+<logentry
+   revision="175">
+<author>dgj470</author>
+<date>2016-03-17T11:58:01.242009Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Added drawing of frontier</msg>
+</logentry>
+<logentry
+   revision="174">
+<author>dgj470</author>
+<date>2016-03-16T20:16:31.199422Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Small changes to the datalink</msg>
+</logentry>
+<logentry
+   revision="173">
+<author>dgj470</author>
+<date>2016-03-16T17:45:15.648947Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Added a function to draw circles with lines between them and a label</msg>
+</logentry>
+<logentry
+   revision="172">
+<author>dgj470</author>
+<date>2016-03-16T12:59:02.844396Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Shortest path now draws</msg>
+</logentry>
+<logentry
+   revision="171">
+<author>dgj470</author>
+<date>2016-03-16T12:47:21.814213Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Nodes now draw correctly. I also changed the size of the path nodes and explored nodes so they render nicer :) </msg>
+</logentry>
+<logentry
+   revision="170">
+<author>dgj470</author>
+<date>2016-03-16T12:45:42.569122Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>No lag, and reverses now because the last commit was wrong! Just fixing drawing of explored now</msg>
+</logentry>
+<logentry
+   revision="169">
+<author>dgj470</author>
+<date>2016-03-16T12:38:31.399899Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Fixed the lag</msg>
+</logentry>
+<logentry
+   revision="168">
+<author>dgj470</author>
+<date>2016-03-16T12:24:30.100207Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Fixed the going backward - now to fix the lag</msg>
+</logentry>
+<logentry
+   revision="167">
+<author>mxp424</author>
+<date>2016-03-16T12:11:14.860123Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Fixed the PLay and Refresh button.</msg>
+</logentry>
+<logentry
+   revision="166">
+<author>dgj470</author>
+<date>2016-03-16T12:04:53.158364Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/ArrowHeadLine.java</path>
+</paths>
+<msg>Removed redundant lines</msg>
+</logentry>
+<logentry
+   revision="165">
+<author>mxa487</author>
+<date>2016-03-15T18:59:25.255898Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/CoordGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Made the nodes to always be on the canvas, even when they are the maximum number for this version (20).</msg>
+</logentry>
+<logentry
+   revision="164">
+<author>mrt469</author>
+<date>2016-03-15T17:15:36.302905Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Disables controls while algorithms are playing or paused</msg>
+</logentry>
+<logentry
+   revision="163">
+<author>mrt469</author>
+<date>2016-03-15T16:32:02.788641Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed spacing on legend</msg>
+</logentry>
+<logentry
+   revision="162">
+<author>mxa487</author>
+<date>2016-03-15T15:17:27.913759Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/CoordGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Graph generations now work more precise and don't generate points outside canvas</msg>
+</logentry>
+<logentry
+   revision="161">
+<author>mxa487</author>
+<date>2016-03-15T14:37:57.033495Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added a fix to the previous commit.</msg>
+</logentry>
+<logentry
+   revision="160">
+<author>dgj470</author>
+<date>2016-03-15T14:36:59.536300Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>I've add the colours, but the text is being weird? Can I GUI guy look at it please :) </msg>
+</logentry>
+<logentry
+   revision="159">
+<author>mxa487</author>
+<date>2016-03-15T14:32:11.915831Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Set default value of directednessCheck flag to false and modified the generation parameters inputted.</msg>
+</logentry>
+<logentry
+   revision="158">
+<author>dgj470</author>
+<date>2016-03-15T14:19:53.574975Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Algorithms are now always a constant colour</msg>
+</logentry>
+<logentry
+   revision="157">
+<author>mrt469</author>
+<date>2016-03-15T14:11:49.922803Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added directedness check to the genPlanar graph call</msg>
+</logentry>
+<logentry
+   revision="156">
+<author>mrt469</author>
+<date>2016-03-15T14:10:28.600742Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Directedness checkbox added</msg>
+</logentry>
+<logentry
+   revision="155">
+<author>mxa487</author>
+<date>2016-03-15T12:09:53.427181Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/CoordGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/DTriangulation.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Node.java</path>
+</paths>
+<msg>Added some more generators (still in test phase), also fixed some stuff.</msg>
+</logentry>
+<logentry
+   revision="154">
+<author>nxb484</author>
+<date>2016-03-14T13:28:12.992979Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Separated export and import to have separate file choosers to manage filters appropriately.</msg>
+</logentry>
+<logentry
+   revision="153">
+<author>nxb484</author>
+<date>2016-03-14T13:20:54.271974Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added "All Files" filter to import file chooser</msg>
+</logentry>
+<logentry
+   revision="152">
+<author>nxb484</author>
+<date>2016-03-13T19:36:28.391786Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Hooked up the import/export methods. Left error handlers alone for later.</msg>
+</logentry>
+<logentry
+   revision="151">
+<author>mxp424</author>
+<date>2016-03-13T18:56:25.322932Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Play ad refresh are now pressable after running an algorithm, but not fully fixed</msg>
+</logentry>
+<logentry
+   revision="150">
+<author>mxp424</author>
+<date>2016-03-13T18:38:07.789115Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Fixed the Lag when playing for the first time.</msg>
+</logentry>
+<logentry
+   revision="149">
+<author>mxa487</author>
+<date>2016-03-12T00:02:17.430410Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Modified the GUI class to work with the new genPlanar method.</msg>
+</logentry>
+<logentry
+   revision="148">
+<author>mxa487</author>
+<date>2016-03-11T23:49:52.610812Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/CoordGenerator.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/DTriangulation.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Made the planar graph generation to accept connectivity and weightedness.</msg>
+</logentry>
+<logentry
+   revision="147">
+<author>mxp424</author>
+<date>2016-03-11T22:21:37.801839Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Set to display the shortest path when running multiple algos. Fixed some minor issued and added new colors tot the legend.</msg>
+</logentry>
+<logentry
+   revision="146">
+<author>mrt469</author>
+<date>2016-03-11T20:26:34.862387Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added the options to select Dijkstra and A Star algorithms</msg>
+</logentry>
+<logentry
+   revision="145">
+<author>dgj470</author>
+<date>2016-03-10T23:27:35.234765Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed bug with generation</msg>
+</logentry>
+<logentry
+   revision="144">
+<author>dgj470</author>
+<date>2016-03-10T23:07:09.056078Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyStack.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/PriorityQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Done more refactoring</msg>
+</logentry>
+<logentry
+   revision="143">
+<author>dgj470</author>
+<date>2016-03-10T21:50:36.204110Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   kind="file"
+   action="A">/src/ui/application/Visualiser.java</path>
+</paths>
+<msg>Done massive refactor! </msg>
+</logentry>
+<logentry
+   revision="142">
+<author>dgj470</author>
+<date>2016-03-10T17:55:52.347064Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Started refactor</msg>
+</logentry>
+<logentry
+   revision="141">
+<author>dgj470</author>
+<date>2016-03-10T17:51:11.109379Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made lines display adjacent</msg>
+</logentry>
+<logentry
+   revision="140">
+<author>mxp424</author>
+<date>2016-03-09T12:24:00.600957Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Implemented the generate graph button.</msg>
+</logentry>
+<logentry
+   revision="139">
+<author>mxp424</author>
+<date>2016-03-09T11:58:31.505890Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/src/ui/application/ArrowHeadLine.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added arrowheads to the lines to view directedness.</msg>
+</logentry>
+<logentry
+   revision="138">
+<author>dgj470</author>
+<date>2016-03-08T20:58:20.817021Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/HeuristicHolder.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>The frontier is now visible inside AlgorithmStatusData - see AlgorithmTest for implementation details, or ask me! </msg>
+</logentry>
+<logentry
+   revision="137">
+<author>dgj470</author>
+<date>2016-03-08T18:33:22.857766Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/MyStack.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/PriorityQueue.java</path>
+</paths>
+<msg>Fixed cost function in A* and djikstras</msg>
+</logentry>
+<logentry
+   revision="136">
+<author>dgj470</author>
+<date>2016-03-08T17:54:53.508487Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/HeuristicHolder.java</path>
+</paths>
+<msg>Changed structure of A*, greedy and djikstras</msg>
+</logentry>
+<logentry
+   revision="135">
+<author>dgj470</author>
+<date>2016-03-08T15:29:29.227274Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   action="D"
+   kind="file">/src/algorithms/structures/GenericQueue.java</path>
+<path
+   kind="file"
+   action="D">/src/algorithms/structures/GenericStack.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   kind="file"
+   action="A">/src/algorithms/structures/HeuristicHolder.java</path>
+<path
+   action="A"
+   kind="file"
+   copyfrom-path="/src/algorithms/structures/GenericQueue.java"
+   copyfrom-rev="134">/src/algorithms/structures/MyQueue.java</path>
+<path
+   kind="file"
+   copyfrom-path="/src/algorithms/structures/GenericStack.java"
+   copyfrom-rev="134"
+   action="A">/src/algorithms/structures/MyStack.java</path>
+<path
+   action="D"
+   kind="file">/src/algorithms/structures/NodePair.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/PriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+</paths>
+<msg>Fixed bug that made it crash, and un-generified a load of code as it was driving me nuts</msg>
+</logentry>
+<logentry
+   revision="134">
+<author>nxb484</author>
+<date>2016-03-08T15:03:02.801696Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/GraphStorage.java</path>
+</paths>
+<msg>Fixed Integer graph export. (used to note down as double so imported int graphs would become double graphs.)</msg>
+</logentry>
+<logentry
+   revision="133">
+<author>dgj470</author>
+<date>2016-03-08T13:53:06.993729Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+</paths>
+<msg>Backbone for getting stack/queue etc data is in place - it's not functional yet, but the methods are there so implementation on the front end can be started
+</msg>
+</logentry>
+<logentry
+   revision="132">
+<author>mxa487</author>
+<date>2016-03-08T11:43:22.328886Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/CoordGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/DTriangulation.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Graph.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Added the planar graph generation as a method to the GraphGenerator. Also added toString to the Connection class.</msg>
+</logentry>
+<logentry
+   revision="131">
+<author>mxa487</author>
+<date>2016-03-08T11:16:30.480667Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/CoordGenerator.java</path>
+<path
+   action="A"
+   kind="file">/src/graph/DTriangulation.java</path>
+</paths>
+<msg>Added initial version of Delaunay triangulation (not tested yet).</msg>
+</logentry>
+<logentry
+   revision="130">
+<author>dgj470</author>
+<date>2016-03-08T00:23:58.758071Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/src/algorithms/implementedAlgorithms/AStarSearch.java</path>
+<path
+   kind="file"
+   action="A">/src/algorithms/implementedAlgorithms/DijkstraSearch.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="A"
+   kind="file">/src/algorithms/structures/APriorityQueue.java</path>
+<path
+   action="A"
+   kind="file">/src/algorithms/structures/DijkstraQueue.java</path>
+</paths>
+<msg>Added Dijkstra's and A* algorithms</msg>
+</logentry>
+<logentry
+   revision="129">
+<author>mxp424</author>
+<date>2016-03-07T20:59:07.423146Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Changed the legend to a toggle button</msg>
+</logentry>
+<logentry
+   revision="128">
+<author>mrt469</author>
+<date>2016-03-07T15:34:47.462089Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added comments and tidied up code</msg>
+</logentry>
+<logentry
+   revision="127">
+<author>mrt469</author>
+<date>2016-03-07T15:29:59.074500Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Removed unnecessary code</msg>
+</logentry>
+<logentry
+   revision="126">
+<author>mrt469</author>
+<date>2016-03-05T21:03:13.618989Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added in graph gen controls, no functionality yet</msg>
+</logentry>
+<logentry
+   revision="125">
+<author>nxb484</author>
+<date>2016-03-05T18:50:41.805310Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphStorage.java</path>
+</paths>
+<msg>Implemented an import for Integer based graphs. Implemented import for String and Double based graphs.Methods now throw exceptions so the UI can relay them to the user. Added a case to examplegraphs to demonstrate it works (Given a filepath, writes planarGraph15 to file then reads it in again.)</msg>
+</logentry>
+<logentry
+   revision="124">
+<author>mrt469</author>
+<date>2016-03-05T17:45:46.793533Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Multiple algorithms run at the same time, they currently draw over each other</msg>
+</logentry>
+<logentry
+   revision="123">
+<author>nxb484</author>
+<date>2016-03-05T01:08:26.791482Z</date>
+<paths>
+<path
+   kind="file"
+   action="D">/src/graph/GraphExporter.java</path>
+<path
+   action="D"
+   kind="file">/src/graph/GraphImporter.java</path>
+<path
+   action="A"
+   kind="file"
+   copyfrom-path="/src/graph/GraphImporter.java"
+   copyfrom-rev="122">/src/graph/GraphStorage.java</path>
+</paths>
+<msg>Consolidated Export and Import into one class to reduce clutter. Implemented methods for the exporting of String and Double graphs.</msg>
+</logentry>
+<logentry
+   revision="122">
+<author>nxb484</author>
+<date>2016-03-04T14:50:29.205372Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/Connection.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Graph.java</path>
+<path
+   action="A"
+   kind="file">/src/graph/GraphExporter.java</path>
+<path
+   kind="file"
+   action="A">/src/graph/GraphImporter.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Node.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Pair.java</path>
+</paths>
+<msg>Updated Javadoc (mainly typos) and added empty files for graph import and export.</msg>
+</logentry>
+<logentry
+   revision="121">
+<author>dgj470</author>
+<date>2016-03-03T16:29:10.961971Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>spinner updates without pressing enter</msg>
+</logentry>
+<logentry
+   revision="120">
+<author>dgj470</author>
+<date>2016-03-03T15:44:18.330376Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Best first, not breadth first! :P</msg>
+</logentry>
+<logentry
+   revision="119">
+<author>mrt469</author>
+<date>2016-03-03T11:27:49.975856Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed resume button sizing</msg>
+</logentry>
+<logentry
+   revision="118">
+<author>mrt469</author>
+<date>2016-03-03T11:25:20.931461Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added comments and fixed the resume button positioning</msg>
+</logentry>
+<logentry
+   revision="117">
+<author>mrt469</author>
+<date>2016-03-03T11:09:52.496831Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added option to select greedy breadth first as the algorithm</msg>
+</logentry>
+<logentry
+   revision="116">
+<author>dgj470</author>
+<date>2016-03-02T21:02:02.580633Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="A"
+   kind="file">/src/algorithms/implementedAlgorithms/GreedyBFS.java</path>
+<path
+   action="A"
+   kind="file">/src/algorithms/structures/GreedyQueue.java</path>
+<path
+   kind="file"
+   action="A">/src/algorithms/structures/PriorityQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added greedyBFS</msg>
+</logentry>
+<logentry
+   revision="115">
+<author>dgj470</author>
+<date>2016-03-02T13:08:53.867960Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericQueue.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/GenericStack.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/NodePair.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/StatusData.java</path>
+</paths>
+<msg>Javadoc'd</msg>
+</logentry>
+<logentry
+   revision="114">
+<author>dgj470</author>
+<date>2016-03-02T12:08:11.045168Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+</paths>
+<msg>Fixed breadth first yay! :D xoxox</msg>
+</logentry>
+<logentry
+   revision="113">
+<author>mrt469</author>
+<date>2016-03-02T11:41:47.284659Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Removes unnecessary code</msg>
+</logentry>
+<logentry
+   revision="112">
+<author>dgj470</author>
+<date>2016-03-02T11:34:54.419268Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+</paths>
+<msg>Fixed negative bug</msg>
+</logentry>
+<logentry
+   revision="111">
+<author>dgj470</author>
+<date>2016-03-02T09:44:39.158363Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Connection.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Updated GUI so it can go forward and backward</msg>
+</logentry>
+<logentry
+   revision="110">
+<author>dgj470</author>
+<date>2016-03-01T23:37:31.286767Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   kind="file"
+   action="A">/src/algorithms/implementedAlgorithms/GenericSearch.java</path>
+<path
+   action="A"
+   kind="file">/src/algorithms/structures/GenericCollection.java</path>
+<path
+   kind="file"
+   action="A">/src/algorithms/structures/GenericQueue.java</path>
+<path
+   action="A"
+   kind="file">/src/algorithms/structures/GenericStack.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/NodePair.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+</paths>
+<msg>Redid breadth and depth first completely, as they were a little messy - breadth first now works, but the path doesn't! Depth first works fine.</msg>
+</logentry>
+<logentry
+   revision="109">
+<author>mxa487</author>
+<date>2016-03-01T19:09:21.420512Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Added a universal graph generation method for the demo. Also made generated graphs to be bidirectional.</msg>
+</logentry>
+<logentry
+   revision="108">
+<author>mxa487</author>
+<date>2016-02-28T18:18:15.701747Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/src/graph/CoordGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Graph.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Added a CoordGenerator class, which generates coordinates of nodes based on a random angle and distance.</msg>
+</logentry>
+<logentry
+   revision="107">
+<author>mxp424</author>
+<date>2016-02-19T13:39:26.383298Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added Button for the legend.</msg>
+</logentry>
+<logentry
+   revision="106">
+<author>mxp424</author>
+<date>2016-02-19T13:27:07.754136Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Pause button is more efficient now.</msg>
+</logentry>
+<logentry
+   revision="105">
+<author>dgj470</author>
+<date>2016-02-19T12:24:29.742032Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+</paths>
+<msg>Javadocc'd breadth first</msg>
+</logentry>
+<logentry
+   revision="104">
+<author>dgj470</author>
+<date>2016-02-19T12:22:56.693100Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made some changes to the speed</msg>
+</logentry>
+<logentry
+   revision="103">
+<author>dgj470</author>
+<date>2016-02-19T12:20:10.453435Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+</paths>
+<msg>Fixed breadth first path</msg>
+</logentry>
+<logentry
+   revision="102">
+<author>dgj470</author>
+<date>2016-02-19T11:59:34.170083Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/structures/NodePair.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/StatusData.java</path>
+</paths>
+<msg>Javadoc'd</msg>
+</logentry>
+<logentry
+   revision="101">
+<author>dgj470</author>
+<date>2016-02-19T11:31:33.726952Z</date>
+<paths>
+<path
+   kind="dir"
+   action="D">/.settings</path>
+</paths>
+<msg>Deleted .settings</msg>
+</logentry>
+<logentry
+   revision="100">
+<author>mxa487</author>
+<date>2016-02-19T11:27:45.732508Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Graph.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Node.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/GraphUnitTest.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="99">
+<author>mrt469</author>
+<date>2016-02-19T11:08:59.773168Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added javadoc</msg>
+</logentry>
+<logentry
+   revision="98">
+<author>mxa487</author>
+<date>2016-02-19T09:56:04.194557Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Some changes and documentation to the graph generation.</msg>
+</logentry>
+<logentry
+   revision="97">
+<author>dgj470</author>
+<date>2016-02-18T17:14:57.959104Z</date>
+<paths>
+<path
+   kind="file"
+   action="D">/.classpath</path>
+<path
+   kind="file"
+   action="D">/.project</path>
+<path
+   action="D"
+   kind="dir">/bin</path>
+</paths>
+<msg>Delete classpath and bin</msg>
+</logentry>
+<logentry
+   revision="96">
+<author>mxp424</author>
+<date>2016-02-18T16:40:38.803316Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added Path Line to the egend and in the UI</msg>
+</logentry>
+<logentry
+   revision="95">
+<author>mxp424</author>
+<date>2016-02-18T16:20:32.636753Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/.classpath</path>
+<path
+   action="A"
+   kind="file">/.project</path>
+<path
+   kind="dir"
+   action="A">/.settings</path>
+<path
+   kind="file"
+   action="A">/.settings/org.eclipse.jdt.core.prefs</path>
+<path
+   kind="dir"
+   action="A">/bin</path>
+<path
+   action="A"
+   kind="dir">/bin/algorithms</path>
+<path
+   kind="file"
+   action="A">/bin/algorithms/AbstractAlgorithm.class</path>
+<path
+   kind="dir"
+   action="A">/bin/algorithms/implementedAlgorithms</path>
+<path
+   action="A"
+   kind="file">/bin/algorithms/implementedAlgorithms/BreadthFirst.class</path>
+<path
+   action="A"
+   kind="file">/bin/algorithms/implementedAlgorithms/DepthFirst.class</path>
+<path
+   kind="dir"
+   action="A">/bin/algorithms/structures</path>
+<path
+   action="A"
+   kind="file">/bin/algorithms/structures/NodePair.class</path>
+<path
+   action="A"
+   kind="dir">/bin/controller</path>
+<path
+   kind="file"
+   action="A">/bin/controller/AlgorithmController.class</path>
+<path
+   kind="dir"
+   action="A">/bin/controller/structures</path>
+<path
+   kind="file"
+   action="A">/bin/controller/structures/AlgorithmStatusData.class</path>
+<path
+   action="A"
+   kind="file">/bin/controller/structures/ExploredStatusData.class</path>
+<path
+   kind="file"
+   action="A">/bin/controller/structures/StatusData.class</path>
+<path
+   kind="dir"
+   action="A">/bin/graph</path>
+<path
+   action="A"
+   kind="file">/bin/graph/Connection.class</path>
+<path
+   action="A"
+   kind="file">/bin/graph/ExampleGraphs.class</path>
+<path
+   action="A"
+   kind="file">/bin/graph/Graph.class</path>
+<path
+   action="A"
+   kind="file">/bin/graph/GraphGenerator.class</path>
+<path
+   action="A"
+   kind="file">/bin/graph/Node.class</path>
+<path
+   action="A"
+   kind="file">/bin/graph/Pair.class</path>
+<path
+   kind="dir"
+   action="A">/bin/testing</path>
+<path
+   kind="file"
+   action="A">/bin/testing/AlgorithmTest.class</path>
+<path
+   kind="file"
+   action="A">/bin/testing/GraphTest.class</path>
+<path
+   kind="file"
+   action="A">/bin/testing/GraphUnitTest.class</path>
+<path
+   kind="dir"
+   action="A">/bin/ui</path>
+<path
+   kind="dir"
+   action="A">/bin/ui/application</path>
+<path
+   kind="file"
+   action="A">/bin/ui/application/GUI$1.class</path>
+<path
+   action="A"
+   kind="file">/bin/ui/application/GUI$2.class</path>
+<path
+   kind="file"
+   action="A">/bin/ui/application/GUI$3$1$1$1.class</path>
+<path
+   kind="file"
+   action="A">/bin/ui/application/GUI$3$1$1.class</path>
+<path
+   action="A"
+   kind="file">/bin/ui/application/GUI$3$1.class</path>
+<path
+   action="A"
+   kind="file">/bin/ui/application/GUI$3.class</path>
+<path
+   action="A"
+   kind="file">/bin/ui/application/GUI.class</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Moved the Refresh Button a bit to the right.</msg>
+</logentry>
+<logentry
+   revision="94">
+<author>mxp424</author>
+<date>2016-02-18T16:16:25.850234Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed the path as it was not showing at max animation speed.</msg>
+</logentry>
+<logentry
+   revision="93">
+<author>mxp424</author>
+<date>2016-02-18T14:42:59.555694Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added numbers on the nodes and coloured and numbered the path nodes</msg>
+</logentry>
+<logentry
+   revision="92">
+<author>nxb484</author>
+<date>2016-02-18T14:15:15.332706Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Added planargraph15. Made connection between 1 and 4 in planargraph5 bi-directional.</msg>
+</logentry>
+<logentry
+   revision="91">
+<author>dgj470</author>
+<date>2016-02-18T13:58:46.881465Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made algorithms terminate at the right time</msg>
+</logentry>
+<logentry
+   revision="90">
+<author>mxp424</author>
+<date>2016-02-18T02:22:25.030810Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added Legend.</msg>
+</logentry>
+<logentry
+   revision="89">
+<author>mxa487</author>
+<date>2016-02-18T01:41:11.368107Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/GraphTest.java</path>
+</paths>
+<msg>Some changes in the parameters of the coords generation.</msg>
+</logentry>
+<logentry
+   revision="88">
+<author>mxp424</author>
+<date>2016-02-18T01:30:28.494112Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Implemented "Pause button" and "Speed of animation"</msg>
+</logentry>
+<logentry
+   revision="87">
+<author>mxa487</author>
+<date>2016-02-17T21:53:15.005085Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/Graph.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/GraphTest.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/GraphUnitTest.java</path>
+</paths>
+<msg>Made the Unit test work and fixed the generation method to be more precise.</msg>
+</logentry>
+<logentry
+   revision="86">
+<author>mxa487</author>
+<date>2016-02-17T19:28:21.268163Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Enabled coords generation in the genSimple generator.</msg>
+</logentry>
+<logentry
+   revision="85">
+<author>mxa487</author>
+<date>2016-02-17T18:15:52.773023Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/testing/GraphTest.java</path>
+<path
+   action="A"
+   kind="file">/src/testing/GraphUnitTest.java</path>
+</paths>
+<msg>Added Graph unit test, not finished.</msg>
+</logentry>
+<logentry
+   revision="84">
+<author>rxf464</author>
+<date>2016-02-17T09:57:54.806307Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+</paths>
+<msg>fixed warnings bfs
+</msg>
+</logentry>
+<logentry
+   revision="83">
+<author>rxf464</author>
+<date>2016-02-17T09:54:48.936505Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+</paths>
+<msg>fixed dfs and bfs </msg>
+</logentry>
+<logentry
+   revision="82">
+<author>mxa487</author>
+<date>2016-02-17T03:49:08.832199Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/GraphGenerator.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Node.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/GraphTest.java</path>
+</paths>
+<msg>Added basic coordinates generation (not yet tested)</msg>
+</logentry>
+<logentry
+   revision="81">
+<author>mxa487</author>
+<date>2016-02-16T23:01:12.460033Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/testing/GraphTest.java</path>
+</paths>
+<msg>Added the graph testing class (thought I committed it before).</msg>
+</logentry>
+<logentry
+   revision="80">
+<author>rxf464</author>
+<date>2016-02-16T22:36:58.037444Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/algorithms/implementedAlgorithms/BreadthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="79">
+<author>mrt469</author>
+<date>2016-02-16T15:46:50.566226Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added return into the algorithm selected check so a null pointer exception doesnt occur</msg>
+</logentry>
+<logentry
+   revision="78">
+<author>mrt469</author>
+<date>2016-02-16T13:41:23.190148Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>-Animates properly on new thread
+-Stores start node and goal node when the play button is clicked, not when the algorithm is selected
+-Very basic checking to make sure nodes and algorithms have been selected</msg>
+</logentry>
+<logentry
+   revision="77">
+<author>mxp424</author>
+<date>2016-02-15T17:21:52.596310Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Deleted some redundant code </msg>
+</logentry>
+<logentry
+   revision="76">
+<author>mxp424</author>
+<date>2016-02-15T17:18:47.604164Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/src/ui/Main.java</path>
+</paths>
+<msg>Don't need it anymore</msg>
+</logentry>
+<logentry
+   revision="75">
+<author>mxp424</author>
+<date>2016-02-15T17:18:35.757921Z</date>
+<paths>
+<path
+   kind="file"
+   action="D">/src/ui/application/Visualise.java</path>
+</paths>
+<msg>Don't need it anymore</msg>
+</logentry>
+<logentry
+   revision="74">
+<author>mxp424</author>
+<date>2016-02-15T17:14:05.155588Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made Animation work (if you press play.. multiple times)</msg>
+</logentry>
+<logentry
+   revision="73">
+<author>dgj470</author>
+<date>2016-02-14T16:35:23.358445Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/Node.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Changed node x/y to int</msg>
+</logentry>
+<logentry
+   revision="72">
+<author>mrt469</author>
+<date>2016-02-14T16:25:25.201746Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added in Dan's logic, so algorithm should work fine, animation still not updating properly</msg>
+</logentry>
+<logentry
+   revision="71">
+<author>dgj470</author>
+<date>2016-02-12T19:06:00.575443Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Fixed a few bugs and made framework for drawing lines</msg>
+</logentry>
+<logentry
+   revision="70">
+<author>mrt469</author>
+<date>2016-02-12T18:45:32.536933Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Started animation, not working yet, if anyone can see why the connection is only updating at the end of the loop instead of each step let me know</msg>
+</logentry>
+<logentry
+   revision="69">
+<author>dgj470</author>
+<date>2016-02-11T12:55:17.763185Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/Main.java</path>
+</paths>
+<msg>Fixed a package declaration that was wrong (ui.main), is this class needed?</msg>
+</logentry>
+<logentry
+   revision="68">
+<author>nxb484</author>
+<date>2016-02-11T12:19:00.596216Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Commented in some properties.</msg>
+</logentry>
+<logentry
+   revision="67">
+<author>mxa487</author>
+<date>2016-02-11T11:14:56.128881Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/src/graph/GraphGenerator.java</path>
+</paths>
+<msg>Added a GraphGenerator class.</msg>
+</logentry>
+<logentry
+   revision="66">
+<author>mxp424</author>
+<date>2016-02-10T15:19:52.451588Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Added DFS using AlgorithmController.</msg>
+</logentry>
+<logentry
+   revision="65">
+<author>dgj470</author>
+<date>2016-02-10T13:26:36.511700Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Added ability to get path - but the path isn't right yet!</msg>
+</logentry>
+<logentry
+   revision="64">
+<author>dgj470</author>
+<date>2016-02-10T13:20:55.088751Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/StatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Added ability to get path - but the path isn't right yet!</msg>
+</logentry>
+<logentry
+   revision="63">
+<author>dgj470</author>
+<date>2016-02-10T12:54:30.561631Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Small fix to the example to make it clearer</msg>
+</logentry>
+<logentry
+   revision="62">
+<author>dgj470</author>
+<date>2016-02-10T12:39:43.426552Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/StatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Made stepping work properly! - see Algorithm Test for example</msg>
+</logentry>
+<logentry
+   revision="61">
+<author>dgj470</author>
+<date>2016-02-10T12:01:16.975678Z</date>
+<paths>
+<path
+   kind="dir"
+   action="D">/src/algorithms/Structures</path>
+<path
+   kind="dir"
+   action="A">/src/algorithms/implementedAlgorithms</path>
+<path
+   kind="file"
+   copyfrom-path="/src/algorithms/Structures/DepthFirst.java"
+   copyfrom-rev="60"
+   action="A">/src/algorithms/implementedAlgorithms/DepthFirst.java</path>
+<path
+   action="A"
+   kind="dir"
+   copyfrom-path="/src/algorithms/Structures"
+   copyfrom-rev="60">/src/algorithms/structures</path>
+<path
+   action="D"
+   kind="file">/src/algorithms/structures/DepthFirst.java</path>
+<path
+   kind="file"
+   action="A">/src/algorithms/structures/NodePair.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+<path
+   action="M"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made changes to the length connections in the graph, and depth first now uses the actual connection length</msg>
+</logentry>
+<logentry
+   revision="60">
+<author>mxp424</author>
+<date>2016-02-10T11:25:30.836990Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Fixed conflicts and DFS in the UI.</msg>
+</logentry>
+<logentry
+   revision="59">
+<author>dgj470</author>
+<date>2016-02-10T10:23:09.139452Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Made some changes to stuff, I'll discuss in meeting :)</msg>
+</logentry>
+<logentry
+   revision="58">
+<author>mxp424</author>
+<date>2016-02-10T01:09:00.573379Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Implemented a prototype of DFS (kinda)</msg>
+</logentry>
+<logentry
+   revision="57">
+<author>dgj470</author>
+<date>2016-02-10T00:18:46.312851Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/StatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>YAY IT WORKS - Okay, seriously, stepping etc works. Have fun :D</msg>
+</logentry>
+<logentry
+   revision="56">
+<author>dgj470</author>
+<date>2016-02-09T23:45:52.060233Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/Structures/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Node.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Finally fixed the depth first yay! :D</msg>
+</logentry>
+<logentry
+   revision="55">
+<author>mxp424</author>
+<date>2016-02-09T22:32:09.162156Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Implemented the Play button (partially as everything is not finished yet) and added the option to choose the start node and end node.</msg>
+</logentry>
+<logentry
+   revision="54">
+<author>mxp424</author>
+<date>2016-02-09T21:58:02.986439Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Implemented the Example Graph.</msg>
+</logentry>
+<logentry
+   revision="53">
+<author>mxp424</author>
+<date>2016-02-09T21:57:36.153791Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Corrected a mistake in the Integer Graph as it was going out of bounds in the ArrayList and added a constructor.</msg>
+</logentry>
+<logentry
+   revision="52">
+<author>mxp424</author>
+<date>2016-02-09T21:15:20.680608Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+</paths>
+<msg>Just trying to figure this SVN for eclipse out.</msg>
+</logentry>
+<logentry
+   revision="51">
+<author>mxa487</author>
+<date>2016-02-09T19:02:46.573077Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Added coordinates to the second example graph.</msg>
+</logentry>
+<logentry
+   revision="50">
+<author>dgj470</author>
+<date>2016-02-09T15:52:45.580185Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/Structures/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Seems to work, yay!</msg>
+</logentry>
+<logentry
+   revision="49">
+<author>dgj470</author>
+<date>2016-02-09T15:43:15.354091Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/Structures/DepthFirst.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Graph.java</path>
+<path
+   kind="file"
+   action="M">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>Fixed a few issues - one of which was that there was a soft copy being done in Graph, not a hard copy! ...But I'm still not sure if the search works? Also changed one of the example graphs a bit for more testing</msg>
+</logentry>
+<logentry
+   revision="48">
+<author>dgj470</author>
+<date>2016-02-09T15:23:46.363209Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/algorithms/Structures/DepthFirst.java</path>
+</paths>
+<msg>IT RUNS AND COMPLETES. Now to find out if it works. brb guys xxx</msg>
+</logentry>
+<logentry
+   revision="47">
+<author>dgj470</author>
+<date>2016-02-09T15:22:38.703978Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/Structures/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/StatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Connection.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Node.java</path>
+<path
+   action="A"
+   kind="dir">/src/testing</path>
+<path
+   action="A"
+   kind="file">/src/testing/AlgorithmTest.java</path>
+</paths>
+<msg>The algorithm testing RUNS, but it does slightly stack overflow. I'm fixing it now but made other changes so I'll commit them now yay and I like writing long commit messages so yeah.</msg>
+</logentry>
+<logentry
+   revision="46">
+<author>nxb484</author>
+<date>2016-02-09T13:26:22.952552Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Fitted PlanarGraph5 with XY coords</msg>
+</logentry>
+<logentry
+   revision="45">
+<author>nxb484</author>
+<date>2016-02-09T13:12:59.716289Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/graph/Node.java</path>
+</paths>
+<msg>Added X and Y coordinates - Set in constructor</msg>
+</logentry>
+<logentry
+   revision="44">
+<author>mxa487</author>
+<date>2016-02-08T19:30:32.605030Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/.classpath</path>
+<path
+   action="D"
+   kind="file">/.project</path>
+<path
+   action="D"
+   kind="dir">/.settings</path>
+</paths>
+<msg>Fixing my mess up (uploaded classpath and settings)</msg>
+</logentry>
+<logentry
+   revision="43">
+<author>mxa487</author>
+<date>2016-02-08T19:27:55.843603Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/.classpath</path>
+<path
+   kind="file"
+   action="A">/.project</path>
+<path
+   action="A"
+   kind="dir">/.settings</path>
+<path
+   action="A"
+   kind="file">/.settings/org.eclipse.jdt.core.prefs</path>
+<path
+   action="M"
+   kind="file">/src/graph/ExampleGraphs.java</path>
+</paths>
+<msg>Added a example graph.</msg>
+</logentry>
+<logentry
+   revision="42">
+<author>dgj470</author>
+<date>2016-02-08T14:08:36.893228Z</date>
+<paths>
+<path
+   action="D"
+   kind="dir">/src/Algorithms</path>
+<path
+   action="D"
+   kind="dir">/src/Controller</path>
+<path
+   action="D"
+   kind="dir">/src/Graph</path>
+<path
+   action="D"
+   kind="dir">/src/UI</path>
+<path
+   kind="dir"
+   copyfrom-path="/src/Algorithms"
+   copyfrom-rev="41"
+   action="A">/src/algorithms</path>
+<path
+   kind="file"
+   action="M">/src/algorithms/AbstractAlgorithm.java</path>
+<path
+   action="M"
+   kind="file">/src/algorithms/Structures/DepthFirst.java</path>
+<path
+   kind="dir"
+   copyfrom-path="/src/Controller"
+   copyfrom-rev="41"
+   action="A">/src/controller</path>
+<path
+   action="M"
+   kind="file">/src/controller/AlgorithmController.java</path>
+<path
+   action="D"
+   kind="dir">/src/controller/Structures</path>
+<path
+   action="A"
+   kind="dir"
+   copyfrom-path="/src/Controller/Structures"
+   copyfrom-rev="41">/src/controller/structures</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/AlgorithmStatusData.java</path>
+<path
+   action="M"
+   kind="file">/src/controller/structures/ExploredStatusData.java</path>
+<path
+   kind="file"
+   action="M">/src/controller/structures/StatusData.java</path>
+<path
+   kind="dir"
+   copyfrom-path="/src/Graph"
+   copyfrom-rev="41"
+   action="A">/src/graph</path>
+<path
+   action="M"
+   kind="file">/src/graph/Connection.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/ExampleGraphs.java</path>
+<path
+   kind="file"
+   action="M">/src/graph/Graph.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Node.java</path>
+<path
+   action="M"
+   kind="file">/src/graph/Pair.java</path>
+<path
+   action="A"
+   kind="dir"
+   copyfrom-path="/src/UI"
+   copyfrom-rev="41">/src/ui</path>
+<path
+   action="M"
+   kind="file">/src/ui/Main.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/GUI.java</path>
+<path
+   action="M"
+   kind="file">/src/ui/application/Visualise.java</path>
+</paths>
+<msg>Realised that packages should have lowercase letters, my bad!</msg>
+</logentry>
+<logentry
+   revision="41">
+<author>rxf464</author>
+<date>2016-02-08T14:03:55.532151Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Algorithms/Structures/DepthFirst.java</path>
+</paths>
+<msg>Fixed error in DepthFirst</msg>
+</logentry>
+<logentry
+   revision="40">
+<author>nxb484</author>
+<date>2016-02-08T13:35:34.514269Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Graph/Graph.java</path>
+</paths>
+<msg>*Actually* fixed removeConnection and removeNode</msg>
+</logentry>
+<logentry
+   revision="39">
+<author>rxf464</author>
+<date>2016-02-08T13:29:03.842233Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="A">/src/Algorithms/Structures/DepthFirst.java</path>
+<path
+   action="M"
+   kind="file">/src/Controller/AlgorithmController.java</path>
+</paths>
+<msg>Added depth first search</msg>
+</logentry>
+<logentry
+   revision="38">
+<author>nxb484</author>
+<date>2016-02-08T13:26:56.408672Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Graph/Graph.java</path>
+</paths>
+<msg>Fixed addNode, removeNode, addConnection, removeConnection</msg>
+</logentry>
+<logentry
+   revision="37">
+<author>nxb484</author>
+<date>2016-02-08T13:05:12.969587Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/Graph/ExampleGraphs.java</path>
+</paths>
+<msg>Added Example graphs class, for testing</msg>
+</logentry>
+<logentry
+   revision="36">
+<author>dgj470</author>
+<date>2016-02-08T12:53:47.525240Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Graph/Node.java</path>
+<path
+   action="M"
+   kind="file">/src/UI/application/Visualise.java</path>
+</paths>
+<msg>Made small change so nodes have x and y so it's drawable!</msg>
+</logentry>
+<logentry
+   revision="35">
+<author>dgj470</author>
+<date>2016-02-08T12:40:49.858324Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Algorithms/AbstractAlgorithm.java</path>
+<path
+   action="M"
+   kind="file">/src/Graph/Node.java</path>
+<path
+   action="D"
+   kind="file">/src/UI/GUI.java</path>
+<path
+   copyfrom-path="/src/UI/GUI.java"
+   copyfrom-rev="34"
+   action="A"
+   kind="file">/src/UI/Main.java</path>
+<path
+   action="M"
+   kind="file">/src/UI/application/GUI.java</path>
+<path
+   kind="file"
+   action="M">/src/UI/application/Visualise.java</path>
+</paths>
+<msg>Fix the errors, it should compile now. Did a load of autofixes, a load of code is broken as the logical flow is slightly lacking...? Please don't commit non fucntional code... ta</msg>
+</logentry>
+<logentry
+   revision="34">
+<author>nxb484</author>
+<date>2016-02-08T12:36:52.652054Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Graph/Graph.java</path>
+</paths>
+<msg>Added getNodeConnections for agorithm use</msg>
+</logentry>
+<logentry
+   revision="33">
+<author>dgj470</author>
+<date>2016-02-08T12:08:35.612220Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Graph/Graph.java</path>
+</paths>
+<msg>commented out a load of broken code! Please don't commit don't that doesn't compile kthxbai</msg>
+</logentry>
+<logentry
+   revision="32">
+<author>nxb484</author>
+<date>2016-02-08T11:56:41.303573Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Graph/Graph.java</path>
+</paths>
+<msg>Commented out addnode(node) while updating it.</msg>
+</logentry>
+<logentry
+   revision="31">
+<author>dgj470</author>
+<date>2016-02-08T11:54:09.143883Z</date>
+<paths>
+<path
+   kind="dir"
+   action="M">/</path>
+<path
+   action="M"
+   kind="file">/src/Algorithms/AbstractAlgorithm.java</path>
+</paths>
+<msg>Added path functionality</msg>
+</logentry>
+<logentry
+   revision="30">
+<author>nxb484</author>
+<date>2016-02-08T11:17:55.458828Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Graph/Connection.java</path>
+<path
+   kind="file"
+   action="M">/src/Graph/Node.java</path>
+</paths>
+<msg>Further cleaning to connection and node. Graph.java still requires some work.</msg>
+</logentry>
+<logentry
+   revision="29">
+<author>mxp424</author>
+<date>2016-02-07T14:30:20.002188Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/UI/application/GUI.java</path>
+</paths>
+<msg>Working GUI with implemented graph and generation.</msg>
+</logentry>
+<logentry
+   revision="28">
+<author>mxp424</author>
+<date>2016-02-07T14:29:47.383773Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/UI/application/Visualise.java</path>
+</paths>
+<msg>V</msg>
+</logentry>
+<logentry
+   revision="27">
+<author>mxp424</author>
+<date>2016-02-07T13:51:34.543008Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/src/UI/application/GUI.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="26">
+<author>mxp424</author>
+<date>2016-02-07T13:51:23.370118Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/src/UI/application/Graph.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="25">
+<author>nxb484</author>
+<date>2016-02-06T20:42:54.801158Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Graph/Graph.java</path>
+</paths>
+<msg>Quick update to allow separate connection implementation, only wrosk with the list of connections being fed directly to it</msg>
+</logentry>
+<logentry
+   revision="24">
+<author>dgj470</author>
+<date>2016-02-06T20:38:09.553306Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="M">/src/Controller/AlgorithmController.java</path>
+</paths>
+<msg>Made some more changes to the algorithms, and added a way of seeing how many 'steps' there are until the simulation finishes</msg>
+</logentry>
+<logentry
+   revision="23">
+<author>nxb484</author>
+<date>2016-02-06T20:34:56.278633Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Graph/Connection.java</path>
+</paths>
+<msg>Changed connection type to &lt;weight,initial,destination&gt;</msg>
+</logentry>
+<logentry
+   revision="22">
+<author>dgj470</author>
+<date>2016-02-06T19:45:50.100073Z</date>
+<paths>
+<path
+   action="A"
+   kind="file"
+   copyfrom-path="/src/Algorithms/AlgorithmInterface.java"
+   copyfrom-rev="21">/src/Algorithms/AbstractAlgorithm.java</path>
+<path
+   kind="file"
+   action="D">/src/Algorithms/AlgorithmInterface.java</path>
+<path
+   action="M"
+   kind="file">/src/Controller/AlgorithmController.java</path>
+</paths>
+<msg>Made some changes to how algorithms will be implemented - using an abstract class to specify constructor</msg>
+</logentry>
+<logentry
+   revision="21">
+<author>dgj470</author>
+<date>2016-02-06T19:15:44.103119Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Controller/Structures/AlgorithmStatusData.java</path>
+</paths>
+<msg>Made my java actually java...</msg>
+</logentry>
+<logentry
+   revision="20">
+<author>dgj470</author>
+<date>2016-02-06T19:13:10.809150Z</date>
+<paths>
+<path
+   action="M"
+   kind="file">/src/Algorithms/AlgorithmInterface.java</path>
+<path
+   kind="file"
+   action="M">/src/Controller/Structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="A">/src/Controller/Structures/ExploredStatusData.java</path>
+</paths>
+<msg>More data structures for the algorithm backend added!</msg>
+</logentry>
+<logentry
+   revision="19">
+<author>dgj470</author>
+<date>2016-02-06T18:21:28.374400Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/Desktop.ini</path>
+</paths>
+<msg>Removed the desktop.ini file...!</msg>
+</logentry>
+<logentry
+   revision="18">
+<author>mxa487</author>
+<date>2016-02-06T17:25:47.850658Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Graph/Graph.java</path>
+<path
+   kind="file"
+   action="M">/src/Graph/Node.java</path>
+</paths>
+<msg>Made Graph and Node to be generic (better for accomodating different types of values). </msg>
+</logentry>
+<logentry
+   revision="17">
+<author>mxp424</author>
+<date>2016-02-06T00:45:10.153230Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/UI/application/GUI.java</path>
+</paths>
+<msg>gui with graph</msg>
+</logentry>
+<logentry
+   revision="16">
+<author>mxp424</author>
+<date>2016-02-06T00:44:39.593284Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/src/UI/application/GUI.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="15">
+<author>mxp424</author>
+<date>2016-02-06T00:35:04.842152Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/src/UI/application/GUI.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="14">
+<author>mxp424</author>
+<date>2016-02-06T00:34:34.727764Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/src/UI/application/Graph.java</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="13">
+<author>mxp424</author>
+<date>2016-02-06T00:32:41.127600Z</date>
+<paths>
+<path
+   action="A"
+   kind="dir">/src/UI/application</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="12">
+<author>mrt469</author>
+<date>2016-02-05T21:54:31.168428Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/UI/GUI.java</path>
+</paths>
+<msg>Initial UI design</msg>
+</logentry>
+<logentry
+   revision="11">
+<author>nxb484</author>
+<date>2016-02-05T14:28:55.884822Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/Desktop.ini</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="10">
+<author>mxp424</author>
+<date>2016-02-05T13:12:01.744522Z</date>
+<paths>
+<path
+   action="A"
+   kind="dir">/src/UI</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="9">
+<author>mxa487</author>
+<date>2016-02-04T22:08:32.472314Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/src/Graph/Connection.java</path>
+<path
+   kind="file"
+   action="M">/src/Graph/Graph.java</path>
+<path
+   action="M"
+   kind="file">/src/Graph/Node.java</path>
+<path
+   action="A"
+   kind="file">/src/Graph/Pair.java</path>
+</paths>
+<msg>Added two types of connection options - a generic Pair list implementation and a Connection object (with no generics, usable only for representing connections).</msg>
+</logentry>
+<logentry
+   revision="8">
+<author>mxa487</author>
+<date>2016-02-04T19:36:57.519405Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/Graph/Node.java</path>
+</paths>
+<msg>Added some random text.</msg>
+</logentry>
+<logentry
+   revision="7">
+<author>mxa487</author>
+<date>2016-02-04T19:32:32.894100Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/.classpath</path>
+<path
+   kind="file"
+   action="D">/.project</path>
+<path
+   action="D"
+   kind="dir">/.settings</path>
+</paths>
+<msg>Some test commit in attempt to fix project structure. Deleted unecessary folders.</msg>
+</logentry>
+<logentry
+   revision="6">
+<author>mxa487</author>
+<date>2016-02-04T19:29:07.972918Z</date>
+<paths>
+<path
+   action="A"
+   kind="file">/.classpath</path>
+<path
+   kind="file"
+   action="A">/.project</path>
+<path
+   action="A"
+   kind="dir">/.settings</path>
+<path
+   kind="file"
+   action="A">/.settings/org.eclipse.jdt.core.prefs</path>
+<path
+   kind="dir"
+   action="D">/Algorithms</path>
+<path
+   kind="dir"
+   action="D">/Controller</path>
+<path
+   kind="dir"
+   action="D">/Graph</path>
+<path
+   kind="dir"
+   action="A">/src</path>
+<path
+   action="A"
+   kind="dir"
+   copyfrom-path="/Algorithms"
+   copyfrom-rev="5">/src/Algorithms</path>
+<path
+   copyfrom-path="/Controller"
+   copyfrom-rev="5"
+   action="A"
+   kind="dir">/src/Controller</path>
+<path
+   kind="dir"
+   copyfrom-path="/Graph"
+   copyfrom-rev="5"
+   action="A">/src/Graph</path>
+<path
+   kind="file"
+   action="M">/src/Graph/Node.java</path>
+</paths>
+<msg>Some test commit in attempt to fix project structure</msg>
+</logentry>
+<logentry
+   revision="5">
+<author>dgj470</author>
+<date>2016-02-04T15:26:11.797371Z</date>
+<paths>
+<path
+   action="D"
+   kind="file">/Algorithms/AlgorithmController.java</path>
+<path
+   kind="file"
+   action="A">/Algorithms/AlgorithmInterface.java</path>
+<path
+   kind="file"
+   action="D">/Algorithms/Structures/Algorithm.java</path>
+<path
+   action="D"
+   kind="file">/Algorithms/Structures/AlgorithmData.java</path>
+</paths>
+<msg>I think I finally managed to delete those files... git FTW</msg>
+</logentry>
+<logentry
+   revision="4">
+<author>dgj470</author>
+<date>2016-02-04T14:15:06.649489Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/Controller/AlgorithmController.java</path>
+<path
+   action="M"
+   kind="file">/Controller/Structures/AlgorithmStatusData.java</path>
+<path
+   kind="file"
+   action="M">/Controller/Structures/StatusData.java</path>
+</paths>
+<msg>Added some comments and removed some duplicate classes.</msg>
+</logentry>
+<logentry
+   revision="3">
+<author>dgj470</author>
+<date>2016-02-03T13:07:14.896740Z</date>
+<paths>
+<path
+   kind="dir"
+   action="A">/Controller</path>
+<path
+   action="A"
+   kind="file">/Controller/AlgorithmController.java</path>
+<path
+   action="A"
+   kind="dir">/Controller/Structures</path>
+<path
+   kind="file"
+   action="A">/Controller/Structures/AlgorithmStatusData.java</path>
+<path
+   action="A"
+   kind="file">/Controller/Structures/StatusData.java</path>
+</paths>
+<msg>Added a little more as I'm out of time now...!</msg>
+</logentry>
+<logentry
+   revision="2">
+<author>dgj470</author>
+<date>2016-02-03T12:51:03.246913Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/Algorithms/AlgorithmController.java</path>
+<path
+   kind="dir"
+   action="A">/Graph</path>
+<path
+   kind="file"
+   action="A">/Graph/Graph.java</path>
+<path
+   action="A"
+   kind="file">/Graph/Node.java</path>
+</paths>
+<msg>Done some more data structures (Nodes and Graphs)</msg>
+</logentry>
+<logentry
+   revision="1">
+<author>dgj470</author>
+<date>2016-02-03T12:40:44.726719Z</date>
+<paths>
+<path
+   kind="dir"
+   action="A">/Algorithms</path>
+<path
+   action="A"
+   kind="file">/Algorithms/AlgorithmController.java</path>
+<path
+   action="A"
+   kind="dir">/Algorithms/Structures</path>
+<path
+   action="A"
+   kind="file">/Algorithms/Structures/Algorithm.java</path>
+<path
+   kind="file"
+   action="A">/Algorithms/Structures/AlgorithmData.java</path>
+</paths>
+<msg>Added some basic stuff, and seeing if svn works!</msg>
+</logentry>
+</log>

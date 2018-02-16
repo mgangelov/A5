@@ -1,0 +1,28 @@
+package algorithms.structures;
+
+import controller.AlgorithmController;
+
+import java.util.LinkedList;
+
+/**
+ * Created by dgj470 on 01/03/16.
+ */
+
+public class MyQueue extends GenericCollection {
+
+    public MyQueue(AlgorithmController a) {
+        super(new LinkedList<>(), a);
+    }
+
+    @Override
+    public HeuristicHolder pop() {
+        return collection.poll();
+    }
+
+    @Override
+    public void push(HeuristicHolder item) {
+        collection.add(item);
+    }
+
+}
+

@@ -1,0 +1,47 @@
+package algorithms.structures;
+
+/**
+ * Created by dgj470 on 01/03/16.
+ */
+
+import controller.AlgorithmController;
+
+import java.util.LinkedList;
+
+/**
+ */
+public abstract class GenericCollection {
+    protected LinkedList<HeuristicHolder> collection;
+
+    public GenericCollection(LinkedList<HeuristicHolder> collection, AlgorithmController a) {
+        this.collection = collection;
+    }
+
+    public abstract HeuristicHolder pop();
+
+    public abstract void push(HeuristicHolder item);
+
+    public String toString() {
+        return collection.toString();
+    }
+
+    public boolean contains(Object o) {
+        return collection.contains(o);
+    }
+
+    public boolean isEmpty() {
+        return collection.isEmpty();
+    }
+
+    public int size() {
+        return collection.size();
+    }
+
+    public void clear() {
+        collection.clear();
+    }
+
+    public LinkedList<HeuristicHolder> getList() {
+        return collection;
+    }
+}

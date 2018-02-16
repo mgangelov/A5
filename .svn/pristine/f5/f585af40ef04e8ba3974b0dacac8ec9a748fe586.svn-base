@@ -1,0 +1,27 @@
+package algorithms.structures;
+
+import controller.AlgorithmController;
+import graph.Connection;
+
+import java.util.Collections;
+import java.util.List;
+
+public class GreedyQueue extends APriorityQueue {
+
+    public GreedyQueue(AlgorithmController a) {
+        super(a);
+    }
+
+    public HeuristicHolder pop() {
+        sort();
+        return collection.poll();
+    }
+
+    private void sort() {
+        Collections.sort((List<HeuristicHolder>) collection, (c1, c2) -> (int) (c1.getHeuristic() - c2.getHeuristic()));    }
+
+    @Override
+    protected double distance(Connection c) {
+        return -1;
+    }
+}
